@@ -112,3 +112,13 @@ https://github.com/oobabooga/text-generation-webui/issues/2228#issuecomment-1556
 ```
 python -m pip install git+https://github.com/huggingface/peft@27af2198225cbb9e049f548440f2bd0fba2204aa --force-reinstall --no-deps
 ```
+
+### `#7` prepare_model_for_kbit_training
+https://github.com/huggingface/peft/issues/108
+```
+from peft import (
+ImportError: cannot import name 'prepare_model_for_kbit_training' from 'peft' (C:\Users\parkm\AppData\Roaming\Python\Python39\site-packages\peft\__init__.py) 
+```
+```
+pip install git+https://github.com/younesbelkada/transformers.git@fix-int8-conversion
+```
