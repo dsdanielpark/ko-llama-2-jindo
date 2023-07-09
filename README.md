@@ -72,6 +72,8 @@ Training with an alpaca format dataset:
 ```
 python qlora.py --dataset="path/to/your/dataset"
 ```
+Off-load was used to train with limited resources. Please refer to the following [Git hash](https://github.com/dsdanielpark/ko-sharegpt-alpaca/commit/0c40cacadc724034ed578aaaae06d02c625be8af) for partial revisions.
+
 
 Training with a self-instruct format dataset:
 ```
