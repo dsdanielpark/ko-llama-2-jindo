@@ -7,14 +7,15 @@ Python Version: Requires Python 3.8 or above
 Description: This file should be executed using Python 3.8 or above.
 """
 
+from utilfunction import find_path
 import json
 import concurrent.futures
 import re
 
 
 class DataProcessor:
-    def __init__(self, target_file_path):
-        with open(target_file_path) as f:
+    def __init__(self, input_file_path):
+        with open(input_file_path) as f:
             self.data = json.load(f)
         self.excluded_data = []
 
@@ -186,3 +187,58 @@ class DataProcessor:
         self.data = DataProcessor.flatten_list(self.data)
         self.write_to_file(self.data, output_file_path)
         self.write_to_file(self.excluded_data, dummy_file_path)
+
+        @staticmethod
+        def static_process_json_file(steps, input_file_path, output_file_path, dummy_file_path):
+            with open(input_file_path) as f:
+                data = json.load(f)
+            excluded_data = []
+            
+            for step in steps:
+                with concurrent.futures.ThreadPoolExecutor() as executor:
+                    if 'step1' in step:
+                        data = list(executor.map(DataProcessor.remove_specific_words, [data]))
+                        data = DataProcessor.flatten_list(data)
+
+                    if 'step2' in step:
+                        data = list(executor.map(DataProcessor.remove_short_fields, [data]))
+                        data = DataProcessor.flatten_list(data)
+
+                    if 'step3' in step:
+                        data = list(executor.map(DataProcessor.replace_sure_translation, [data]))
+                        data = DataProcessor.flatten_list(data)
+
+                    if 'step4' in step:
+                        data = list(executor.map(DataProcessor.delete_error_korean_prefix, [data]))
+                        data = DataProcessor.flatten_list(data)
+
+                    if 'step5' in step:
+                        data = list(executor.map(DataProcessor.do_not_translate_code_snippet, [data]))
+                        data = DataProcessor.flatten_list(data)
+
+                    if 'step6' in step:
+                        data = list(executor.map(DataProcessor.remove_duplicates, [data]))
+                        data = DataProcessor.flatten_list(data)
+
+                    if 'step7' in step:
+                        excluded_data = list(executor.map(DataProcessor.replace_output_prefix, [data]))
+                        excluded_data = DataProcessor.flatten_list(excluded_data)
+                        data = [d for d in data if d not in excluded_data]
+
+                    if 'step8' in step:
+                        data = list(executor.map(DataProcessor.remove_deletion_and_addition, [data]))
+                        data = DataProcessor.flatten_list(data)
+
+            data = DataProcessor.flatten_list(data)
+            DataProcessor.write_to_file(data, output_file_path)
+            DataProcessor.write_to_file(excluded_data, dummy_file_path)
+
+
+
+if __name__ == "__main__":
+    json_file_list = find_path('../notebooks/output/', 'file', '.json')
+    steps = ['step'+str(i) for i in range(9)]
+    dummy_file_path = 'dummy.json'
+
+    [DataProcessor.static_process_json_file(steps, json_file_list[i], json_file_list[i], dummy_file_path) for i in range(len(json_file_list))]
+    
