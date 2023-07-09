@@ -37,7 +37,7 @@ Off-load was used to train with limited resources. Please refer to the following
 
 <br>
 
-### `#5`Install bitsandbytes
+### `#5` Install bitsandbytes
 Error: In addition to CUDA, the bitsandbytes library is required for training with Lora. However, if it fails to install properly on Windows, this issue may occur.
 ```
 RuntimeError:
