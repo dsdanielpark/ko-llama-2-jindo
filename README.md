@@ -7,15 +7,15 @@ Through this experiment, we aim to translate and fine-tune the data using Alpaca
 After using the translator to translate the contents of SharGPT, an alpaca model fine-tuned specifically for language translation tasks.
 
 
-# Datasets
+## Datasets
 Please confirm the [data processing](https://github.com/dsdanielpark/ko-sharegpt-deepl-alpaca/blob/main/documents/DATA_PROCESSING.md) method and the approach for [revisions](https://github.com/dsdanielpark/ko-sharegpt-deepl-alpaca/blob/main/documents/DATA_REVISION.md).
 
 
+<br><br>
+
 # [LoRA Alpaca](https://github.com/tloen/alpaca-lora)
 
-## Docker
-
-### Build
+### Docker Build
 By building with the following command, the built Docker image can be used with the name KSDV:latest.
 ```
 docker build -t KSDV:latest docker/
@@ -29,8 +29,8 @@ docker-compose -f docker/docker-compose.yml up
 ```
 
 
-### Official model weights
-The most recent "official" Alpaca-LoRA adapter available at tloen/alpaca-lora-7b was trained on March 26 with the following command:
+### Official Weights
+The most recent `Official Alpaca LoRA` adapter available at tloen/alpaca-lora-7b was trained on March 26 with the following command:
 
 ```
 python finetune.py \
@@ -62,6 +62,7 @@ python finetune.py ^
 
 </details>
 
+<br><br>
 
 # [QLoRA](https://github.com/artidoro/qlora) Alpaca
 
