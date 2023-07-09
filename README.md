@@ -134,14 +134,14 @@ python finetune.py ^
 You can specify the path to your dataset using the `--dataset` argument. If the `--dataset_format` argument is not set, it will default to the Alpaca format. Here are a few examples:
 Training with an alpaca format dataset:
 ```
-python qlora.py --dataset="path/to/your/dataset"
+python qlora.py --dataset="./data/ko_shargpt_deepl_cleaned_v1.json"
 ```
 Off-load was used to train with limited resources. Please refer to the following [Link](https://huggingface.co/docs/transformers/main/en/main_classes/quantization#offload-between-cpu-and-gpu) and [Git hash](https://github.com/dsdanielpark/ko-sharegpt-alpaca/commit/0c40cacadc724034ed578aaaae06d02c625be8af) for partial revisions. 
 
 
 Training with a self-instruct format dataset:
 ```
-python qlora.py --dataset="path/to/your/dataset" --dataset_format="self-instruct"
+python qlora.py --dataset="./data/ko_shargpt_deepl_cleaned_v1.json" --dataset_format="self-instruct"
 ```
 
 
