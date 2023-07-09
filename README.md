@@ -50,5 +50,13 @@ python finetune.py ^
 ```
 </details>
 
+### How can delete cached model weight
+```
+pip install huggingface_hub["cli"]
+```
+```
+huggingface-cli delete-cache
+```
+
 # License
 This project adheres to the licenses of the reference code and datasets used. It is the user's responsibility to check the licenses, and the user assumes all responsibilities regarding any licensing restrictions on this code. This repository is provided under the MIT license without any implied or explicit warranties.
