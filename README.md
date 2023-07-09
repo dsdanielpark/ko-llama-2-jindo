@@ -100,6 +100,7 @@ python finetune.py \
 ```
 <details>
 <summary> Windows CMD</summary>
+
 ```
 python generate.py ^
     --load_8bit ^
