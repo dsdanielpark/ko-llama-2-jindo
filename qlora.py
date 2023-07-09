@@ -42,6 +42,7 @@ from transformers.trainer_utils import PREFIX_CHECKPOINT_DIR
 
 
 torch.backends.cuda.matmul.allow_tf32 = True
+os.environ['TF_XLA_FLAGS'] = '--tf_xla_enable_xla_devices'
 
 logger = logging.getLogger(__name__)
 
@@ -51,7 +52,7 @@ DEFAULT_PAD_TOKEN = "[PAD]"
 @dataclass
 class ModelArguments:
     model_name_or_path: Optional[str] = field(
-        default="EleutherAI/pythia-12b"
+        default="decapoda-research/llama-7b-hf"
     )
     trust_remote_code: Optional[bool] = field(
         default=False,
