@@ -32,6 +32,61 @@ docker-compose -f docker/docker-compose.yml up
 ### Official Weights
 The most recent `Official Alpaca LoRA` adapter available at tloen/alpaca-lora-7b was trained on March 26 with the following command:
 
+### Fine-tuning
+```
+python finetune.py \
+    --base_model 'decapoda-research/llama-7b-hf' \
+    --data_path 'danielpark/ko_shargpt_deepl_cleaned_v1' \
+    --output_dir './lora-alpaca' \
+    --batch_size 128 \
+    --micro_batch_size 4 \
+    --num_epochs 3 \
+    --learning_rate 1e-4 \
+    --cutoff_len 512 \
+    --val_set_size 2000 \
+    --lora_r 8 \
+    --lora_alpha 16 \
+    --lora_dropout 0.05 \
+    --lora_target_modules '[q_proj,v_proj]' \
+    --train_on_inputs \
+    --group_by_length
+```
+
+<details>
+<summary> Windows CMD</summary>
+
+```
+python finetune.py ^
+    --base_model 'decapoda-research/llama-7b-hf' ^
+    --data_path 'danielpark/ko_shargpt_deepl_cleaned_v1' ^
+    --output_dir './lora-alpaca' ^
+    --batch_size 128 ^
+    --micro_batch_size 4 ^
+    --num_epochs 3 ^
+    --learning_rate 1e-4 ^
+    --cutoff_len 512 ^
+    --val_set_size 2000 ^
+    --lora_r 8 ^
+    --lora_alpha 16 ^
+    --lora_dropout 0.05 ^
+    --lora_target_modules '[q_proj,v_proj]' ^
+    --train_on_inputs ^
+    --group_by_length
+
+```
+
+</details>
+
+
+### Inference
+
+```
+python generate.py \
+    --load_8bit \
+    --base_model 'decapoda-research/llama-7b-hf' \
+    --lora_weights 'tloen/alpaca-lora-7b'
+```
+Or
 ```
 python finetune.py \
     --base_model='decapoda-research/llama-7b-hf' \
@@ -43,24 +98,29 @@ python finetune.py \
     --lora_r=16 \
     --micro_batch_size=8
 ```
-
 <details>
 <summary> Windows CMD</summary>
-
+```
+python generate.py ^
+    --load_8bit ^
+    --base_model 'decapoda-research/llama-7b-hf' ^
+    --lora_weights 'tloen/alpaca-lora-7b'
+```
+Or
 ```
 python finetune.py ^
-    --base_model="decapoda-research/llama-7b-hf" ^
+    --base_model='decapoda-research/llama-7b-hf' ^
     --num_epochs=10 ^
     --cutoff_len=512 ^
     --group_by_length ^
-    --output_dir="./lora-alpaca" ^
-    --lora_target_modules="[q_proj,k_proj,v_proj,o_proj]" ^
+    --output_dir='./lora-alpaca' ^
+    --lora_target_modules='[q_proj,k_proj,v_proj,o_proj]' ^
     --lora_r=16 ^
     --micro_batch_size=8
-
 ```
 
 </details>
+
 
 <br><br>
 
