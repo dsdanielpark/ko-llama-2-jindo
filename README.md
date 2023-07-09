@@ -146,15 +146,6 @@ python qlora.py --dataset="./data/ko_shargpt_deepl_cleaned_v1.json" --dataset_fo
 
 <br>
 
-## Appendix 
-
-### How can delete cached model weight
-```
-pip install huggingface_hub["cli"]
-```
-```
-huggingface-cli delete-cache
-```
 
 # [QnA](https://github.com/dsdanielpark/ko-alpaca-lingo/blob/main/documents/QNA.md)
 
@@ -194,6 +185,19 @@ Sincerely grateful for any reports on new features or bugs. Your valuable feedba
 - Core maintainer: [Daniel Park, South Korea](https://github.com/DSDanielPark) <br>
 - E-mail: parkminwoo1991@gmail.com <br>
 
-## Reference 
 
+## Appendix 
+
+### How can delete cached model weight
+```
+pip install huggingface_hub["cli"]
+```
+```
+huggingface-cli delete-cache
+```
+
+## Reference 
+[1] https://github.com/tloen/alpaca-lora
+[2] https://github.com/huggingface/peft
+[3] https://github.com/artidoro/qlora
 
