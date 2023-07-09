@@ -196,7 +196,7 @@ pip install huggingface_hub["cli"]
 huggingface-cli delete-cache
 ```
 
-## Reference 
+# Reference 
 [1] https://github.com/tloen/alpaca-lora <br>
 [2] https://github.com/huggingface/peft <br>
 [3] https://github.com/artidoro/qlora <br>
