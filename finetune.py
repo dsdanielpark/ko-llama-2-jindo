@@ -28,8 +28,8 @@ from src.utils.prompter import Prompter
 def train(
     # model/data params
     base_model: str = "",  # the only required argument
-    data_path: str = "yahma/alpaca-cleaned",
-    output_dir: str = "./lora-alpaca",
+    data_path: str = "data/ko_shargpt_deepl_cleaned",
+    output_dir: str = "./lora-kor-alpaca",
     # training hyperparams
     batch_size: int = 128,
     micro_batch_size: int = 4,
