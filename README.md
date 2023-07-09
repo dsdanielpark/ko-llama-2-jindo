@@ -29,7 +29,7 @@ docker-compose -f docker/docker-compose.yml up
 ```
 
 
-## Official model weights
+### Official model weights
 The most recent "official" Alpaca-LoRA adapter available at tloen/alpaca-lora-7b was trained on March 26 with the following command:
 
 ```
@@ -79,7 +79,7 @@ python qlora.py --dataset="path/to/your/dataset" --dataset_format="self-instruct
 ```
 
 
-## Tips 
+## Appendix 
 
 ### How can delete cached model weight
 ```
