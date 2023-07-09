@@ -1,5 +1,6 @@
 [![](https://img.shields.io/badge/Language-English-lightgrey)](https://github.com/dsdanielpark/kor-sharegpt-deepl-alpaca) [![](https://img.shields.io/badge/%EC%96%B8%EC%96%B4-%ED%95%9C%EA%B5%AD%EC%96%B4-lightgrey)](https://github.com/dsdanielpark/kor-sharegpt-deepl-alpaca/blob/main/documents/README_KOR.md)
 
+준비 중
 
 # Ko Alpaca Lingo
 The term "Lingo" in the model name "KoAlpacaLingo" refers to the ability to handle specialized terms and expressions in specific fields. This model represents a model that is proficient in understanding and translating the language characteristics of specific domains in Korean translation tasks.
