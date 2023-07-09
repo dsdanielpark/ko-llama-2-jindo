@@ -26,6 +26,14 @@ Please confirm if you are trying to download and load the config and the appropr
 <br>
 
 ### `#4` If you can NOT use GPU
+Error: You can NOT use GPU
+```python
+import torch
+torch.cuda.is_available()
+```
+```
+raise ValueError(f"{param_name} doesn't have any device set.")
+```
 https://huggingface.co/docs/transformers/main/en/main_classes/quantization#offload-between-cpu-and-gpu
 ```python
 from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
