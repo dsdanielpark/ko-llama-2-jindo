@@ -17,3 +17,7 @@ By running the following command, the alpaca-lora service will run as a Docker c
 ```
 docker-compose -f docker/docker-compose.yml up
 ```
+
+
+
+# License
