@@ -42,7 +42,7 @@ from transformers.trainer_utils import PREFIX_CHECKPOINT_DIR
 
 
 torch.backends.cuda.matmul.allow_tf32 = True
-os.environ['TF_XLA_FLAGS'] = '--tf_xla_enable_xla_devices'
+os.environ['TF_XLA_FLAGS'] = '--tf_xla_enable_xla_devices' # If you want to use llm_int8_enable_fp32_cpu_offload=True
 
 logger = logging.getLogger(__name__)
 
@@ -265,14 +265,16 @@ def get_accelerate_model(args, checkpoint_dir):
     n_gpus = torch.cuda.device_count()
     max_memory = f'{args.max_memory_MB}MB'
     max_memory = {i: max_memory for i in range(n_gpus)}
-    # device_map = "auto"
-    device_map = {
-     "transformer.word_embeddings" : 0 ,
-     "transformer.word_embeddings_layernorm" : 0 ,
-     "lm_head" : "cpu" ,
-     "transformer.h" : 0 ,
-     "transformer.ln_f" : 0 ,
-    }
+    device_map = "auto"
+
+    # If you want to use llm_int8_enable_fp32_cpu_offload=True
+    # device_map = {
+    #  "transformer.word_embeddings" : 0 ,
+    #  "transformer.word_embeddings_layernorm" : 0 ,
+    #  "lm_head" : "cpu" ,
+    #  "transformer.h" : 0 ,
+    #  "transformer.ln_f" : 0 ,
+    # }
     
     # if we are in a distributed setting, we need to set the device map and max memory per device
     if os.environ.get('LOCAL_RANK') is not None:
@@ -301,7 +303,7 @@ def get_accelerate_model(args, checkpoint_dir):
             bnb_4bit_compute_dtype=compute_dtype,
             bnb_4bit_use_double_quant=args.double_quant,
             bnb_4bit_quant_type=args.quant_type,
-            llm_int8_enable_fp32_cpu_offload=True
+            llm_int8_enable_fp32_cpu_offload=False
         ),
         torch_dtype=(torch.float32 if args.fp16 else (torch.bfloat16 if args.bf16 else torch.float32)),
         trust_remote_code=args.trust_remote_code,
