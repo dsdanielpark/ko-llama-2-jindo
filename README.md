@@ -3,7 +3,9 @@ After translating the contents of SharGPT with a DeepL translator, a Vicuna mode
 
 
 
-# Docker
+# [Alpaca-LoRA](https://github.com/tloen/alpaca-lora)
+
+## Docker
 
 ### Build
 By building with the following command, the built Docker image can be used with the name KSDV:latest.
@@ -19,7 +21,7 @@ docker-compose -f docker/docker-compose.yml up
 ```
 
 
-## Official weights
+## Official model weights
 The most recent "official" Alpaca-LoRA adapter available at tloen/alpaca-lora-7b was trained on March 26 with the following command:
 
 ```
@@ -36,6 +38,7 @@ python finetune.py \
 
 <details>
 <summary> Windows CMD</summary>
+
 ```
 python finetune.py ^
     --base_model="decapoda-research/llama-7b-hf" ^
@@ -48,7 +51,14 @@ python finetune.py ^
     --micro_batch_size=8
 
 ```
+
 </details>
+
+
+# [QLoRA](https://github.com/artidoro/qlora)
+
+
+## Tips 
 
 ### How can delete cached model weight
 ```
