@@ -63,3 +63,11 @@ https://github.com/TimDettmers/bitsandbytes/issues/175
 ```
 pip install bitsandbytes-windows
 ```
+
+
+### `#6` AttributeError: module 'bitsandbytes.nn' has no attribute 'Linear4bit'
+https://github.com/oobabooga/text-generation-webui/issues/2228#issuecomment-1556002597
+
+```
+python -m pip install git+https://github.com/huggingface/peft@27af2198225cbb9e049f548440f2bd0fba2204aa --force-reinstall --no-deps
+```
