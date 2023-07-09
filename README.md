@@ -2,8 +2,8 @@
 
 
 
-# Korean ShareGPT DeepL Alpaca(KSDA)
-After using the DeepL translator to translate the contents of SharGPT, an alpaca model fine-tuned specifically for language translation tasks.
+# Korean ShareGPT Alpaca
+After using the translator to translate the contents of SharGPT, an alpaca model fine-tuned specifically for language translation tasks.
 
 # Datasets
 Please confirm the [data processing](https://github.com/dsdanielpark/ko-sharegpt-deepl-alpaca/blob/main/documents/DATA_PROCESSING.md) method and the approach for [revisions](https://github.com/dsdanielpark/ko-sharegpt-deepl-alpaca/blob/main/documents/DATA_REVISION.md).
