@@ -58,6 +58,19 @@ python finetune.py ^
 # [QLoRA](https://github.com/artidoro/qlora)
 
 
+## Train Using Local Datasets
+You can specify the path to your dataset using the `--dataset` argument. If the `--dataset_format` argument is not set, it will default to the Alpaca format. Here are a few examples:
+Training with an alpaca format dataset:
+```
+python qlora.py --dataset="path/to/your/dataset"
+```
+
+Training with a self-instruct format dataset:
+```
+python qlora.py --dataset="path/to/your/dataset" --dataset_format="self-instruct"
+```
+
+
 ## Tips 
 
 ### How can delete cached model weight
