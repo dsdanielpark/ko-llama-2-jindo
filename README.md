@@ -13,7 +13,7 @@ Please confirm the [data processing](https://github.com/dsdanielpark/ko-sharegpt
 
 <br><br>
 
-# [LoRA Alpaca](https://github.com/tloen/alpaca-lora)
+# [Alpaca Lora](https://github.com/tloen/alpaca-lora)
 
 ### Docker Build
 By building with the following command, the built Docker image can be used with the name KSDV:latest.
@@ -29,10 +29,10 @@ docker-compose -f docker/docker-compose.yml up
 ```
 
 
-### Official Weights
+### Official Weights Alpaca Lora
 The most recent `Official Alpaca LoRA` adapter available at tloen/alpaca-lora-7b was trained on March 26 with the following command:
 
-### Fine-tuning
+## Fine-tuning Alpaca Lora
 ```
 python finetune.py \
     --base_model 'decapoda-research/llama-7b-hf' \
@@ -78,7 +78,7 @@ python finetune.py ^
 </details>
 
 
-### Inference
+## Generate (Inference) Alpaca Lora
 
 ```
 python generate.py \
@@ -124,10 +124,10 @@ python finetune.py ^
 
 <br><br>
 
-# [QLoRA](https://github.com/artidoro/qlora) Alpaca
+# Alpaca [QLoRA](https://github.com/artidoro/qlora)
 
 
-## Train Using Local Datasets
+## Fine-tuning Alpaca QLoRA
 You can specify the path to your dataset using the `--dataset` argument. If the `--dataset_format` argument is not set, it will default to the Alpaca format. Here are a few examples:
 Training with an alpaca format dataset:
 ```
