@@ -6,7 +6,6 @@ Date: July 4, 2023
 Python Version: Requires Python 3.8 or above
 Description: This file should be executed using Python 3.8 or above.
 """
-
 import json
 import concurrent.futures
 import re
@@ -37,6 +36,8 @@ class DataProcessor:
         for d in data:
             try:
                 d['output'] = re.sub(r'\b물론,\b', '물론이죠.', d['output'])
+                d['output'] = re.sub(r'\b확실히,\b', '', d['output'])
+                d['output'] = re.sub(r'\b예,\b', '네.', d['output'])
             except Exception as e:
                 print(f"Error at replace_sure_translation {e}")
         return data
@@ -53,17 +54,17 @@ class DataProcessor:
     @staticmethod
     def replace_output_prefix(data):
         prefix_set = {"을 ", "를 ", "이 ", "가 ", "h", "은 ", "는 ", "에 ", "으 ", "의", "예, ", "^[A-Za-z] ", "^[ㄱ-ㅎㅏ-ㅣ가-힣] ", "^[0-9] ", ".", ","}
-        result = []
+        exclued_data = []
 
         for d in data:
             try:
                 output_text = d['output']
-                if not output_text.startswith(tuple(prefix_set)):
-                    result.append(d)
+                if output_text.startswith(tuple(prefix_set)):
+                    exclued_data.append(d)
             except Exception as e:
                 print(f"Error at replace_output_prefix {e}")
             
-        return result
+        return exclued_data
 
 
 
@@ -117,6 +118,15 @@ class DataProcessor:
                     output_words[0] = input_words[0]
                     output_value = " ".join(output_words)
                     d["output"] = output_value
+
+            if output_words[0] == "물론,":
+                output_words[0] = "물론이죠. "
+                output_value = " ".join(output_words)
+                d["output"] = output_value
+
+            if len(output_words[0]) == 1 and output_words[0].isalpha() and output_words[0].isascii() and output_words[0].lower() != "a":
+                output_words[0] = ""
+                output_value = " ".join(output_words)
 
         return data
 
