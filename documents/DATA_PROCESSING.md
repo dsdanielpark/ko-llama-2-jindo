@@ -3,6 +3,8 @@ The term "Lingo" in the model name "KoAlpacaLingo" refers to the ability to hand
 Through this experiment, we aim to translate and fine-tune the data using Alpaca for the purpose of generating natural Korean language models (LLMs). Additionally, we will explore the possibility of fine-tuning with limited GPU resources.
 After using the translator to translate the contents of SharGPT, an alpaca model fine-tuned specifically for language translation tasks.
 
+<br>
+
 
 ## DataSets
 ### `shargpt_deepl_cleaned_for_en_to_ko.json`
@@ -17,7 +19,7 @@ I have extracted translation pairs from the [junelee/sharegpt_deepl_ko](https://
 - `ko_shargpt_deepl_cleaned_v1.json`: The dataset extracted and preprocessed using the algorithm to make only the Korean text more natural, as described above. [danielpark/ko_shargpt_deepl_cleaned_v1](https://huggingface.co/datasets/danielpark/ko_shargpt_deepl_cleaned_v1)
 - `ko_shargpt_deepl_cleaned_v2.json`: Certain portions have been manually deleted or corrected by human inspection from v1.
 
-<br><br>
+<br>
 
 ### `shargpt_google_cleaned_for_en_to_ko.json`
 I have extracted translation pairs from the [dbdu/ShareGPT-74k-ko](https://huggingface.co/datasets/dbdu/ShareGPT-74k-ko/tree/main) dataset using 
