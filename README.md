@@ -6,10 +6,9 @@
 After using the DeepL translator to translate the contents of SharGPT, an alpaca model fine-tuned specifically for language translation tasks.
 
 # Datasets
-Please confirm the data processing method and the approach for revisions.
+Please confirm the [data processing](https://github.com/dsdanielpark/ko-sharegpt-deepl-alpaca/blob/main/documents/DATA_PROCESSING.md) method and the approach for [revisions](https://github.com/dsdanielpark/ko-sharegpt-deepl-alpaca/blob/main/documents/DATA_REVISION.md).
 
-# Train Alpaca
-***
+
 # [LoRA Alpaca](https://github.com/tloen/alpaca-lora)
 
 ## Docker
