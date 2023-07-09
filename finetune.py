@@ -28,7 +28,7 @@ from src.utils.prompter import Prompter
 def train(
     # model/data params
     base_model: str = "",  # the only required argument
-    data_path: str = "data/shargpt_deepl_cleaned_for_en_to_kor",
+    data_path: str = "data/ko_shargpt_deepl_cleaned",
     output_dir: str = "./lora-kor-alpaca",
     # training hyperparams
     batch_size: int = 128,
