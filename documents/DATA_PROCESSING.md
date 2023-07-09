@@ -7,7 +7,7 @@ After using the translator to translate the contents of SharGPT, an alpaca model
 
 
 ## DataSets
-### `shargpt_deepl_cleaned_for_en_to_ko.json`
+### `#1` `shargpt_deepl_cleaned_for_en_to_ko.json`
 
 I have extracted translation pairs from the [junelee/sharegpt_deepl_ko](https://huggingface.co/datasets/junelee/sharegpt_deepl_ko) dataset using [src/preprocessing/data_gen.py](https://github.com/dsdanielpark/ko-sharegpt-deepl-alpaca/blob/main/src/preprocessing/data_gen.py) and made some corrections to the parts that were awkwardly interpreted in Korean using the algorithm in [src/preprocessing/data_cleaner.py](https://github.com/dsdanielpark/ko-sharegpt-deepl-alpaca/blob/main/src/preprocessing/data_cleaner.py).
 
@@ -21,7 +21,7 @@ I have extracted translation pairs from the [junelee/sharegpt_deepl_ko](https://
 
 <br>
 
-### `shargpt_google_cleaned_for_en_to_ko.json`
+### `#2` `shargpt_google_cleaned_for_en_to_ko.json`
 I have extracted translation pairs from the [dbdu/ShareGPT-74k-ko](https://huggingface.co/datasets/dbdu/ShareGPT-74k-ko/tree/main) dataset using 
 
 
