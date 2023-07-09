@@ -7,7 +7,7 @@ For debug transformers
 transformers-cli env
 ```
 
-
+<br>
 
 
 ### `#2` How can delete cached model weight
@@ -18,9 +18,12 @@ pip install huggingface_hub["cli"]
 huggingface-cli delete-cache
 ```
 
+<br>
 
 ### `#3` ValueError: gpt_neox.embed_in.weight doesn't have any device set.
 Please confirm if you are trying to download and load the config and the appropriate foundation model using the from_pretrained method. Note that the config may vary for different foundation models.
+
+<br>
 
 ### `#4` If you can NOT use GPU
 https://huggingface.co/docs/transformers/main/en/main_classes/quantization#offload-between-cpu-and-gpu
@@ -32,6 +35,7 @@ quantization_config = BitsAndBytesConfig(llm_int8_enable_fp32_cpu_offload=True)
 
 Off-load was used to train with limited resources. Please refer to the following [Link](https://huggingface.co/docs/transformers/main/en/main_classes/quantization#offload-between-cpu-and-gpu) and [Git hash](https://github.com/dsdanielpark/ko-sharegpt-alpaca/commit/0c40cacadc724034ed578aaaae06d02c625be8af) for partial revisions. 
 
+<br>
 
 ### `#5`Install bitsandbytes
 Error: In addition to CUDA, the bitsandbytes library is required for training with Lora. However, if it fails to install properly on Windows, this issue may occur.
