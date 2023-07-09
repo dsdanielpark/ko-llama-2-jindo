@@ -1,18 +1,18 @@
 version: '3'
 
 services:
-  alpaca-lora:
+  ko-alpaca-lingo:
     build:
       context: ./
       dockerfile: Dockerfile
       args:
         BUILDKIT_INLINE_CACHE: "0"
-    image: alpaca-lora
+    image: ko-alpaca-lingo
     shm_size: '64gb'
-    command: generate.py --load_8bit --base_model $BASE_MODEL --lora_weights 'tloen/alpaca-lora-7b'
+    command: generate.py --load_8bit --base_model $BASE_MODEL --lora_weights 'tloen/ko-alpaca-lingo-7b'
     restart: unless-stopped
     volumes:
-      - alpaca-lora:/root/.cache # Location downloaded weights will be stored
+      - ko-alpaca-lingo:/root/.cache # Location downloaded weights will be stored
     ports:
       - 7860:7860
     deploy:
@@ -24,5 +24,5 @@ services:
               capabilities: [ gpu ]
 
 volumes:
-  alpaca-lora:
-    name: alpaca-lora
+  ko-alpaca-lingo:
+    name: ko-alpaca-lingo

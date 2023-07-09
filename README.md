@@ -16,9 +16,9 @@ Please check the [data processing](https://github.com/dsdanielpark/ko-sharegpt-d
 # [Alpaca Lora](https://github.com/tloen/alpaca-lora)
 
 ### Docker Build
-By building with the following command, the built Docker image can be used with the name KSDV:latest.
+By building with the following command, the built Docker image can be used with the name `ko-alpaca-lingo:latest`.
 ```
-docker build -t KSDV:latest docker/
+docker build -t ko-alpaca-lingo:latest docker/
 ```
 
 ### Docker Compose
