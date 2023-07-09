@@ -1,5 +1,5 @@
-# QNA
-
+# QnA
+[PEFT](https://github.com/huggingface/peft), [Transformers](https://huggingface.co/docs/transformers/index), Lora, and QLora, along with their various settings, have numerous dependencies, including low-level drivers and operating systems that control hardware. As a result, they can cause various errors depending on the development environment. Therefore, it is strongly recommended to use Docker. However, developing automation that handles multiple GPUs and diverse settings can be challenging, and it is highly likely to be infeasible due to the rapid development of libraries. Therefore, it is necessary to refer to the provided helpful error messages and debug accordingly.
 
 ### `#1` For debugging
 For debug transformers
