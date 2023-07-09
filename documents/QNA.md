@@ -4,7 +4,48 @@
 ### `#1` For debugging
 For debug transformers
 ```
+pip install huggingface_hub["cli"]
+```
+```
 transformers-cli env
+```
+In my case
+
+```
+===================================BUG REPORT===================================
+Welcome to bitsandbytes. For bug reports, please run
+
+python -m bitsandbytes
+
+ and submit this information together with your error trace to: https://github.com/TimDettmers/bitsandbytes/issues
+================================================================================
+bin C:\Users\parkm\.conda\envs\miccai\lib\site-packages\bitsandbytes\libbitsandbytes_cpu.so
+C:\Users\parkm\.conda\envs\miccai\lib\site-packages\bitsandbytes\cextension.py:34: UserWarning: The installed version of bitsandbytes was compiled without GPU support. 8-bit optimizers, 8-bit multiplication, and GPU quantization are unavailable.
+  warn("The installed version of bitsandbytes was compiled without GPU support. "
+'NoneType' object has no attribute 'cadam32bit_grad_fp32'
+CUDA SETUP: Loading binary C:\Users\parkm\.conda\envs\miccai\lib\site-packages\bitsandbytes\libbitsandbytes_cpu.so...
+argument of type 'WindowsPath' is not iterable
+WARNING:tensorflow:From C:\Users\parkm\.conda\envs\miccai\lib\site-packages\transformers\commands\env.py:63: is_gpu_available (from tensorflow.python.framework.test_util) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.config.list_physical_devices('GPU')` instead.
+2023-07-10 02:48:30.125941: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX AVX2
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-07-10 02:48:31.226114: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1616] Created device /device:GPU:0 with 5471 MB memory:  -> device: 0, name: NVIDIA GeForce RTX 3070 Laptop GPU, pci bus id: 0000:01:00.0, compute capability: 8.6
+
+Copy-and-paste the text below in your GitHub issue and FILL OUT the two last points.
+
+- `transformers` version: 4.31.0.dev0
+- Platform: Windows-10-10.0.22621-SP0
+- Python version: 3.8.5
+- Huggingface_hub version: 0.15.1
+- Safetensors version: 0.3.1
+- PyTorch version (GPU?): 2.0.1+cpu (False)
+- Tensorflow version (GPU?): 2.10.1 (True)
+- Flax version (CPU?/GPU?/TPU?): not installed (NA)
+- Jax version: not installed
+- JaxLib version: not installed
+- Using GPU in script?: <fill in>
+- Using distributed or parallel set-up in script?: <fill in>
 ```
 
 <br>
