@@ -197,7 +197,7 @@ huggingface-cli delete-cache
 ```
 
 ## Reference 
-[1] https://github.com/tloen/alpaca-lora
-[2] https://github.com/huggingface/peft
-[3] https://github.com/artidoro/qlora
-
+[1] https://github.com/tloen/alpaca-lora <br>
+[2] https://github.com/huggingface/peft <br>
+[3] https://github.com/artidoro/qlora <br>
+[4] https://huggingface.co/timdettmers/qlora-alpaca-7b <br>
