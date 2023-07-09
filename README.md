@@ -7,7 +7,7 @@ After using the DeepL translator to translate the contents of SharGPT, an alpaca
 
 
 
-# [Alpaca LoRA](https://github.com/tloen/alpaca-lora)
+# [LoRA Alpaca](https://github.com/tloen/alpaca-lora)
 
 ## Docker
 
@@ -59,7 +59,7 @@ python finetune.py ^
 </details>
 
 
-# [QLoRA](https://github.com/artidoro/qlora)
+# [QLoRA](https://github.com/artidoro/qlora) Alpaca
 
 
 ## Train Using Local Datasets
