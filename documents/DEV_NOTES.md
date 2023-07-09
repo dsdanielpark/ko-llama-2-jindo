@@ -1,2 +1,2 @@
-# Korean ShareGPT DeepL Alpaca(KSDA)
-After translating the contents of SharGPT with a DeepL translator, a Vicuna model fine-tuned for language translation (Korean-English example)
+# Korean ShareGPT Alpaca
+After using the translator to translate the contents of SharGPT, an alpaca model fine-tuned specifically for language translation tasks.

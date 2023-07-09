@@ -1,10 +1,8 @@
 [![](https://img.shields.io/badge/Language-English-lightgrey)](https://github.com/dsdanielpark/kor-sharegpt-deepl-alpaca) [![](https://img.shields.io/badge/%EC%96%B8%EC%96%B4-%ED%95%9C%EA%B5%AD%EC%96%B4-lightgrey)](https://github.com/dsdanielpark/kor-sharegpt-deepl-alpaca/blob/main/documents/README_KOR.md)
 
 
-
-# Korean ShareGPT DeepL Alpaca(KSDA)
-After translating the contents of SharGPT with a DeepL translator, a Vicuna model fine-tuned for language translation (Korean-English example)
-
+# Korean ShareGPT Alpaca
+After using the translator to translate the contents of SharGPT, an alpaca model fine-tuned specifically for language translation tasks.
 
 
 # [Alpaca-LoRA](https://github.com/tloen/alpaca-lora)
