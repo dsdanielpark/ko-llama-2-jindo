@@ -10,7 +10,7 @@ After using the translator to translate the contents of SharGPT, an alpaca model
 
 
 ## Datasets
-Please check the [data processing](https://github.com/dsdanielpark/ko-sharegpt-deepl-alpaca/blob/main/documents/DATA_PROCESSING.md) method and the approach for [revisions](https://github.com/dsdanielpark/ko-sharegpt-deepl-alpaca/blob/main/documents/DATA_REVISION.md).
+Data Pipeline: Please check the [data processing](https://github.com/dsdanielpark/ko-sharegpt-deepl-alpaca/blob/main/documents/DATA_PROCESSING.md) method and the approach for [revisions](https://github.com/dsdanielpark/ko-sharegpt-deepl-alpaca/blob/main/documents/DATA_REVISION.md).
 
 
 <br><br>
