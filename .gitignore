@@ -164,3 +164,11 @@ cython_debug/
 data/ko_sharegpt_deepl_alpaka.json
 data/ko_sharegpt.json
 data/original_shargpt.json
+data/dbdu/ShareGPT-74k-ko/ko_sharegpt_deepl_alpaka.json
+data/dbdu/ShareGPT-74k-ko/ko_sharegpt.json
+data/dbdu/ShareGPT-74k-ko/ko_shargpt_deepl_cleaned_v1.json
+data/dbdu/ShareGPT-74k-ko/original_shargpt.json
+data/junelee/sharegpt_deepl_ko/part1_ko_cleaned.json
+data/junelee/sharegpt_deepl_ko/part2_ko_cleaned.json
+data/junelee/sharegpt_deepl_ko/sg_90k_part1.json
+data/junelee/sharegpt_deepl_ko/sg_90k_part2.json
