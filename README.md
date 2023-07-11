@@ -18,7 +18,7 @@ Data Pipeline: Please check the [data processing](https://github.com/dsdanielpar
 # [Alpaca Lora](https://github.com/tloen/alpaca-lora)
 
 ![](assets/qlora.png)
-**[https://arxiv.org/abs/2305.14314](https://arxiv.org/abs/2305.14314)**
+*[https://arxiv.org/abs/2305.14314](https://arxiv.org/abs/2305.14314)*
 
 ### Docker Build
 By building with the following command, the built Docker image can be used with the name `ko-alpaca-lingo:latest`.
