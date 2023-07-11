@@ -169,6 +169,9 @@ python qlora.py --dataset="./data/ko_shargpt_deepl_cleaned_v1.json" --dataset_fo
 
 # [QnA](https://github.com/dsdanielpark/ko-alpaca-lingo/blob/main/documents/QNA.md)
 
+# [GORANI](https://github.com/dsdanielpark/GORANI)
+Most open-source LLM models are derived from the open-source LLM weights of Meta, called Llama. The Python implementation of Llama and fine-tuning it for the Korean language can be found in the GORANI (고라니) project.
+
 # License
 I hold no legal responsibility; <br>
 This project adheres to the licenses of the reference code and datasets used. It is the user's responsibility to check the licenses, and the user assumes all responsibilities regarding any licensing restrictions on this code. This repository is provided under the MIT license without any implied or explicit warranties.
