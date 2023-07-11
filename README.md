@@ -13,12 +13,30 @@ After using the translator to translate the contents of SharGPT, an alpaca model
 Data Pipeline: Please check the [data processing](https://github.com/dsdanielpark/ko-sharegpt-deepl-alpaca/blob/main/documents/DATA_PROCESSING.md) method and the approach for [revisions](https://github.com/dsdanielpark/ko-sharegpt-deepl-alpaca/blob/main/documents/DATA_REVISION.md). Please check the following repository for high-quality large-scale datasets in alpaca format for llama finetuning: [Korean Open LLM Datasets(KOLD)](https://github.com/dsdanielpark/korean-open-llm-datasets)
 
 
+
+
+
+
 <br><br>
 
-# [Alpaca Lora](https://github.com/tloen/alpaca-lora)
+
+
+
+
+# LoRA and QLoRA
+Applying a method to fine-tune only a subset of LLM weights and optimize GPU utilization in the Alpaca code.
+
+
 
 ![](assets/qlora.png)
 *[https://arxiv.org/abs/2305.14314](https://arxiv.org/abs/2305.14314)*
+
+# [Alpaca Lora](https://github.com/tloen/alpaca-lora)
+Includes code for replicating Stanford Alpaca's results using low-rank adaptation (LoRA). They offer an Instruct model of similar quality to `text-davinci-003` that can run on a Raspberry Pi for research purposes. The code can be easily extended to larger models like 13b, 30b, and 65b.
+
+In addition to the training code, which can run within hours on a single RTX 4090, they provide a script for downloading and performing inference on the foundation model and LoRA, along with the LoRA weights. They utilize Hugging Face's PEFT and Tim Dettmers' bitsandbytes for efficient and cost-effective fine-tuning.
+
+The LoRA model produces outputs comparable to the Stanford Alpaca model without hyperparameter tuning (see included outputs). Further tuning may lead to better performance, so tey encourage interested users to try it out and share their results.
 
 ### Docker Build
 By building with the following command, the built Docker image can be used with the name `ko-alpaca-lingo:latest`.
@@ -131,6 +149,7 @@ python finetune.py ^
 <br><br>
 
 # Alpaca [QLoRA](https://github.com/artidoro/qlora)
+QLoRA is an efficient finetuning approach that allows for finetuning a 65B parameter model on a single 48GB GPU while maintaining full 16-bit finetuning task performance. It utilizes 4-bit quantization and Low Rank Adapters (LoRA) to reduce memory usage. The best model, Guanaco, surpasses previous models on the Vicuna benchmark, achieving 99.3% of ChatGPT's performance level with just 24 hours of finetuning on a single GPU. QLoRA introduces innovations such as 4-bit NormalFloat (NF4) data type, Double Quantization, and Paged Optimizers to save memory without sacrificing performance. Over 1,000 models were finetuned using QLoRA, demonstrating state-of-the-art results across various datasets and model types. 
 
 
 ## Fine-tuning Alpaca QLoRA
