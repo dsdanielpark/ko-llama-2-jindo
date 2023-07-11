@@ -24,7 +24,7 @@ Data Pipeline: Please check the [data processing](https://github.com/dsdanielpar
 
 
 # LoRA and QLoRA
-Applying a method to fine-tune only a subset of LLM weights and optimize GPU utilization in the Alpaca code.
+Applying a method to fine-tune only a subset of LLM weights and optimize GPU utilization in the [Stanford Alpaca.](https://crfm.stanford.edu/2023/03/13/alpaca.html)
 
 
 
