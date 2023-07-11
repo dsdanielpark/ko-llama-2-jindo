@@ -21,7 +21,7 @@ Data Pipeline: Please check the [data processing](https://github.com/dsdanielpar
 
 
 # Alpaca
-Alpaca 7B is a model derived from the [LLaMA 7B model](https://ai.facebook.com/blog/large-language-model-llama-meta-ai/) of [Meta](https://about.meta.com/), fine-tuned using 52K instruction-following demonstrations. In our initial evaluation, Alpaca demonstrates similar qualitative behavior to OpenAI's text-davinci-003 model, despite being significantly smaller and more affordable to reproduce (<$600). You can find the code release on our GitHub repository.
+Alpaca 7B is a model derived from the [LLaMA 7B model](https://ai.facebook.com/blog/large-language-model-llama-meta-ai/) of [Meta](https://about.meta.com/), fine-tuned using 52K instruction-following demonstrations. In our initial evaluation, Alpaca demonstrates similar qualitative behavior to OpenAI's text-davinci-003 model, despite being significantly smaller and more affordable to reproduce (<$600). You can find the code release on [LLaMA GitHub repository](https://github.com/facebookresearch/llama).
 
 
 # LoRA and QLoRA
