@@ -26,8 +26,8 @@ Alpaca 7B is a model derived from the [LLaMA 7B model](https://ai.facebook.com/b
 
 # LoRA and QLoRA
 Applying a method to fine-tune only a subset of LLM weights and optimize GPU utilization in the [Stanford Alpaca.](https://crfm.stanford.edu/2023/03/13/alpaca.html)
-
-
+- [*LoRA*](https://github.com/microsoft/LoRA)(*Lo*w-*R*ank *A*daptation of Large Language Models) is a method for adapting large-scale pre-trained language models to specific tasks by introducing trainable rank decomposition matrices, significantly reducing the number of trainable parameters and GPU memory requirements, while maintaining or surpassing the performance of traditional fine-tuning approaches on various models.
+- [*QLoRA*](https://github.com/artidoro/qlora)(*Q*uantized *Lo*w-*R*ank *A*daptation of Large Language Models) is an efficient finetuning approach that reduces memory usage while maintaining high performance, enabling the finetuning of large language models on a single GPU and achieving state-of-the-art results on various benchmarks.
 
 ![](assets/qlora.png)
 *[https://arxiv.org/abs/2305.14314](https://arxiv.org/abs/2305.14314)*
