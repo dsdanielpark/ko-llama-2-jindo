@@ -1,3 +1,9 @@
+Development Status :: 2 - Pre-Alpha <br>
+*Copyright (c) 2023 MinWoo Park*
+
+<br>
+
+
 [![](https://img.shields.io/badge/Language-English-lightgrey)](https://github.com/dsdanielpark/ko-sharegpt-deepl-alpaca) [![](https://img.shields.io/badge/%EC%96%B8%EC%96%B4-%ED%95%9C%EA%B5%AD%EC%96%B4-lightgrey)](https://github.com/dsdanielpark/ko-sharegpt-deepl-alpaca/blob/main/documents/README_KO.md)
 
 ##### Specializes in some task in Korean, aiming to generate natural language models using Alpaca and explore limited GPU fine-tuning.
