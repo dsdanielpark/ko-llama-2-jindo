@@ -10,14 +10,16 @@ After using the translator to translate the contents of SharGPT, an alpaca model
 
 
 ## Datasets
-Data Pipeline: Please check the [data processing](https://github.com/dsdanielpark/ko-sharegpt-deepl-alpaca/blob/main/documents/DATA_PROCESSING.md) method and the approach for [revisions](https://github.com/dsdanielpark/ko-sharegpt-deepl-alpaca/blob/main/documents/DATA_REVISION.md). Please check the following repository for high-quality large-scale datasets in alpaca format for llama finetuning: [Korean Open LLM Datasets(KOLD) Chain](https://github.com/dsdanielpark/korean-open-llm-datasets-chain)
+Data Pipeline: Please check the [data processing](https://github.com/dsdanielpark/ko-sharegpt-deepl-alpaca/blob/main/documents/DATA_PROCESSING.md) method and the approach for [revisions](https://github.com/dsdanielpark/ko-sharegpt-deepl-alpaca/blob/main/documents/DATA_REVISION.md). Please check the following repository for high-quality large-scale datasets in alpaca format for LLaMA finetuning: [Korean Open LLM Datasets(KOLD) Chain](https://github.com/dsdanielpark/korean-open-llm-datasets-chain).
+
+
+## Foundation Model: [LLaMA](https://ai.meta.com/blog/large-language-model-llama-meta-ai/) from [Meta AI](https://ai.meta.com/)
+If you want to download the official model, fill this [official request form](https://docs.google.com/forms/d/e/1FAIpQLSfqNECQnMkycAp2jP4Z9TFX0cGR4uf7b_fBxjY_OjhJILlKGA/viewform) and wait.
+Delta weights over the original Llama model is released under [CC BY-NC-SA-4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/). 
 
 
 
-
-
-
-<br><br>
+<br>
 
 
 # Alpaca
@@ -168,11 +170,15 @@ python qlora.py --dataset="./data/ko_shargpt_deepl_cleaned_v1.json" --dataset_fo
 <br>
 
 
+# Vicuna using [FastChat](https://github.com/lm-sys/FastChat)
+An Open-Source Chatbot Impressing GPT-4 with 90% ChatGPT Quality
+
+
 # [QnA](https://github.com/dsdanielpark/ko-alpaca-lingo/blob/main/documents/QNA.md)
 I have compiled some common and encountered errors, along with their solutions. I hope this will be helpful to many researchers. Before creating an issue, please search for it first. If you find an error along with its solution, I would appreciate it if you could provide a pull request.
 
 # [GORANI](https://github.com/dsdanielpark/GORANI)
-Most open-source LLM models are derived from the open-source LLM weights of Meta, called Llama. The Python implementation of Llama and fine-tuning it for the Korean language can be found in the GORANI (고라니) project.
+Most open-source LLM models are derived from the open-source LLM weights of Meta, called LLaMA. The Python implementation of LLaMA and fine-tuning it for the Korean language can be found in the GORANI (고라니) project.
 
 # License
 I hold no legal responsibility; <br>
