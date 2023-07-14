@@ -170,8 +170,8 @@ python qlora.py --dataset="./data/ko_shargpt_deepl_cleaned_v1.json" --dataset_fo
 <br>
 
 
-# Vicuna using [FastChat](https://github.com/lm-sys/FastChat)
-An Open-Source Chatbot Impressing GPT-4 with 90% ChatGPT Quality
+# [Vicuna](https://huggingface.co/lmsys) using [FastChat](https://github.com/lm-sys/FastChat)
+An open source chatbot impressing GPT-4 with 90% Chat-GPT quality. 
 
 
 # [QnA](https://github.com/dsdanielpark/ko-alpaca-lingo/blob/main/documents/QNA.md)
