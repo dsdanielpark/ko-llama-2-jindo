@@ -38,6 +38,8 @@ Applying a method to fine-tune only a subset of LLM weights and optimize GPU uti
 ![](assets/qlora.png)
 *[https://arxiv.org/abs/2305.14314](https://arxiv.org/abs/2305.14314)*
 
+<br>
+
 # [Alpaca LoRA](https://github.com/tloen/alpaca-lora)
 Includes code for replicating Stanford Alpaca's results using low-rank adaptation (LoRA). They offer an Instruct model of similar quality to `text-davinci-003` that can run on a Raspberry Pi for research purposes. The code can be easily extended to larger models like 13b, 30b, and 65b.
 In addition to the training code, which can run within hours on a single RTX 4090, they provide a script for downloading and performing inference on the foundation model and LoRA, along with the LoRA weights. They utilize Hugging Face's PEFT and Tim Dettmers' bitsandbytes for efficient and cost-effective fine-tuning.
@@ -177,6 +179,13 @@ python qlora.py --dataset="./data/ko_shargpt_deepl_cleaned_v1.json" --dataset_fo
 # [Vicuna](https://huggingface.co/lmsys) using [FastChat](https://github.com/lm-sys/FastChat)
 An open source chatbot impressing GPT-4 with 90% Chat-GPT quality. 
 
+<br>
+
+# [Falcon](https://huggingface.co/tiiuae/falcon-7b) from [Hugging Face](https://huggingface.co/)
+Falcon-7B and Falcon-40B have been trained on 1.5 trillion and 1 trillion tokens respectively, in line with modern models optimising for inference. The key ingredient for the high quality of the Falcon models is their training data, predominantly based (>80%) on # [Falcon](
+[RefinedWeb](https://huggingface.co/datasets/tiiuae/falcon-refinedweb) — a novel massive web dataset based on CommonCrawl. 
+
+<br><br>
 
 # [QnA](https://github.com/dsdanielpark/ko-alpaca-lingo/blob/main/documents/QNA.md)
 I have compiled some common and encountered errors, along with their solutions. I hope this will be helpful to many researchers. Before creating an issue, please search for it first. If you find an error along with its solution, I would appreciate it if you could provide a pull request.
