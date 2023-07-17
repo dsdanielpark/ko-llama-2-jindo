@@ -1,23 +1,29 @@
-[![](https://img.shields.io/badge/Language-English-lightgrey)](https://github.com/dsdanielpark/ko-sharegpt-deepl-alpaca) [![](https://img.shields.io/badge/%EC%96%B8%EC%96%B4-%ED%95%9C%EA%B5%AD%EC%96%B4-lightgrey)](https://github.com/dsdanielpark/ko-sharegpt-deepl-alpaca/blob/main/documents/README_KO.md)
+Development Status :: 2 - Pre-Alpha <br>
+*Copyright (c) 2023 MinWoo Park*
 
+# Korean Alpaca Jindo [![](https://img.shields.io/badge/Language-English-lightgrey)](https://github.com/dsdanielpark/ko-alpaca-jindo) [![](https://img.shields.io/badge/%EC%96%B8%EC%96%B4-%ED%95%9C%EA%B5%AD%EC%96%B4-lightgrey)](https://github.com/dsdanielpark/ko-alpaca-jindo/blob/main/documents/README_KO.md)
 ##### Specializes in some task in Korean, aiming to generate natural language models using Alpaca and explore limited GPU fine-tuning.
 
-# Korean Alpaca Lingo
 
-The term `Lingo` in the model name `KoAlpacaLingo` refers to the ability to handle specialized terms and expressions in specific fields. This model represents a model that is proficient in understanding and translating the language characteristics of specific domains in Korean translation tasks.
-Through this experiment, we aim to translate and fine-tune the data using Alpaca for the purpose of generating natural Korean language models (LLMs). Additionally, we will explore the possibility of fine-tuning with limited GPU resources.
+
+
+
+The `jindo` in `ko-alpaca-jindo` refers to the Korean dog breed, Jindo. The term `jindo` signifies a language model specialized in preprocessing Korean language datasets, similar to `lingo`, and aims to be a lightweight and fast model tailored for processing Korean datasets for LLM(Large Language Model, "LLM") training. 
+Through this experiment, we aim to translate and fine-tune the LLM models for the purpose of generating Korean LLMs. Additionally, we will explore the possibility of fine-tuning with limited GPU resources.
 After using the translator to translate the contents of SharGPT, an alpaca model fine-tuned specifically for language translation tasks.
 
 
 ## Datasets
-Data Pipeline: Please check the [data processing](https://github.com/dsdanielpark/ko-sharegpt-deepl-alpaca/blob/main/documents/DATA_PROCESSING.md) method and the approach for [revisions](https://github.com/dsdanielpark/ko-sharegpt-deepl-alpaca/blob/main/documents/DATA_REVISION.md). Please check the following repository for high-quality large-scale datasets in alpaca format for llama finetuning: [Korean Open LLM Datasets(KOLD) Chain](https://github.com/dsdanielpark/korean-open-llm-datasets-chain)
+Data Pipeline: Please check the [data processing](https://github.com/dsdanielpark/ko-alpaca-jindo/blob/main/documents/DATA_PROCESSING.md) method and the approach for [revisions](https://github.com/dsdanielpark/ko-alpaca-jindo/blob/main/documents/DATA_REVISION.md). Please check the following repository for high-quality large-scale datasets in alpaca format for LLaMA finetuning: [Korean Open LLM Datasets(KOLD) Chain](https://github.com/dsdanielpark/korean-open-llm-datasets-chain).
+
+
+## Foundation Model: [LLaMA](https://ai.meta.com/blog/large-language-model-llama-meta-ai/) from [Meta AI](https://ai.meta.com/)
+If you want to download the official model, fill this [official request form](https://docs.google.com/forms/d/e/1FAIpQLSfqNECQnMkycAp2jP4Z9TFX0cGR4uf7b_fBxjY_OjhJILlKGA/viewform) and wait.
+Delta weights over the original Llama model is released under [CC BY-NC-SA-4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/). 
 
 
 
-
-
-
-<br><br>
+<br>
 
 
 # Alpaca
@@ -31,6 +37,8 @@ Applying a method to fine-tune only a subset of LLM weights and optimize GPU uti
 
 ![](assets/qlora.png)
 *[https://arxiv.org/abs/2305.14314](https://arxiv.org/abs/2305.14314)*
+
+<br>
 
 # [Alpaca LoRA](https://github.com/tloen/alpaca-lora)
 Includes code for replicating Stanford Alpaca's results using low-rank adaptation (LoRA). They offer an Instruct model of similar quality to `text-davinci-003` that can run on a Raspberry Pi for research purposes. The code can be easily extended to larger models like 13b, 30b, and 65b.
@@ -168,11 +176,21 @@ python qlora.py --dataset="./data/ko_shargpt_deepl_cleaned_v1.json" --dataset_fo
 <br>
 
 
+# [Vicuna](https://huggingface.co/lmsys) using [FastChat](https://github.com/lm-sys/FastChat)
+An open source chatbot impressing GPT-4 with 90% Chat-GPT quality. 
+
+<br>
+
+# [Falcon](https://huggingface.co/tiiuae/falcon-7b) from [Hugging Face](https://huggingface.co/)
+Falcon-7B and Falcon-40B have been trained on 1.5 trillion and 1 trillion tokens respectively, in line with modern models optimising for inference. The key ingredient for the high quality of the Falcon models is their training data, predominantly based (>80%) on [Falcon RefinedWeb](https://huggingface.co/datasets/tiiuae/falcon-refinedweb) — a novel massive web dataset based on CommonCrawl. 
+
+<br><br>
+
 # [QnA](https://github.com/dsdanielpark/ko-alpaca-lingo/blob/main/documents/QNA.md)
 I have compiled some common and encountered errors, along with their solutions. I hope this will be helpful to many researchers. Before creating an issue, please search for it first. If you find an error along with its solution, I would appreciate it if you could provide a pull request.
 
 # [GORANI](https://github.com/dsdanielpark/GORANI)
-Most open-source LLM models are derived from the open-source LLM weights of Meta, called Llama. The Python implementation of Llama and fine-tuning it for the Korean language can be found in the GORANI (고라니) project.
+Most open-source LLM models are derived from the open-source LLM weights of Meta, called LLaMA. The Python implementation of LLaMA and fine-tuning it for the Korean language can be found in the GORANI (고라니) project.
 
 # License
 I hold no legal responsibility; <br>
