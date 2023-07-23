@@ -1,14 +1,14 @@
 Development Status :: 2 - Pre-Alpha <br>
 *Copyright (c) 2023 MinWoo Park*
 
-# Korean Alpaca Jindo [![](https://img.shields.io/badge/Language-English-lightgrey)](https://github.com/dsdanielpark/ko-alpaca-jindo) [![](https://img.shields.io/badge/%EC%96%B8%EC%96%B4-%ED%95%9C%EA%B5%AD%EC%96%B4-lightgrey)](https://github.com/dsdanielpark/ko-alpaca-jindo/blob/main/documents/README_KO.md)
+# Korean Guanaco Jindo [![](https://img.shields.io/badge/Language-English-lightgrey)](https://github.com/dsdanielpark/ko-alpaca-jindo) [![](https://img.shields.io/badge/%EC%96%B8%EC%96%B4-%ED%95%9C%EA%B5%AD%EC%96%B4-lightgrey)](https://github.com/dsdanielpark/ko-alpaca-jindo/blob/main/documents/README_KO.md)
 ##### Specializes in some task in Korean, aiming to generate natural language models using Alpaca and explore limited GPU fine-tuning.
 
 
 
 
 
-The `jindo` in `ko-alpaca-jindo` refers to the Korean dog breed, Jindo. The term `jindo` signifies a language model specialized in preprocessing Korean language datasets, similar to `lingo`, and aims to be a lightweight and fast model tailored for processing Korean datasets for LLM(Large Language Model, "LLM") training. 
+The `jindo` in `ko-guanaco-jindo` refers to the Korean dog breed, Jindo. The term `jindo` signifies a language model specialized in preprocessing Korean language datasets, similar to `lingo`, and aims to be a lightweight and fast model tailored for processing Korean datasets for LLM(Large Language Model, "LLM") training. 
 Through this experiment, we aim to translate and fine-tune the LLM models for the purpose of generating Korean LLMs. Additionally, we will explore the possibility of fine-tuning with limited GPU resources.
 After using the translator to translate the contents of SharGPT, an alpaca model fine-tuned specifically for language translation tasks.
 
@@ -17,22 +17,37 @@ After using the translator to translate the contents of SharGPT, an alpaca model
 Data Pipeline: Please check the [data processing](https://github.com/dsdanielpark/ko-alpaca-jindo/blob/main/documents/DATA_PROCESSING.md) method and the approach for [revisions](https://github.com/dsdanielpark/ko-alpaca-jindo/blob/main/documents/DATA_REVISION.md). Please check the following repository for high-quality large-scale datasets in alpaca format for LLaMA finetuning: [Korean Open LLM Datasets(KOLD) Chain](https://github.com/dsdanielpark/korean-open-llm-datasets-chain).
 
 
-## Foundation Models
+## Foundation Model
 1. [LLaMA](https://ai.meta.com/blog/large-language-model-llama-meta-ai/) from [Meta AI](https://ai.meta.com/)
 If you want to download the official model, fill this [official request form](https://docs.google.com/forms/d/e/1FAIpQLSfqNECQnMkycAp2jP4Z9TFX0cGR4uf7b_fBxjY_OjhJILlKGA/viewform) and wait.
-Delta weights over the original Llama model is released under [CC BY-NC-SA-4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/).
+Delta weights over the original Llama model is released under [CC BY-NC-SA-4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/). <br>
 2. [LLaMA2](https://ai.meta.com/llama/) from [Meta AI](https://ai.meta.com/)
 
+## Reference Model
+### Guanaco
+Guanaco is an LLM based on the QLoRA 4-bit fine-tuning method developed by Tim Dettmers et. al. in the UW NLP group. It achieves 99% ChatGPT performance on the Vicuna benchmark.
+
+**Features**
+
+- Uses LoRA fine-tuning method
+- Fine-tunes up to a 65B parameter model on a 48GB GPU without performance loss compared to 16-bit models
+- Outperforms all previous models on the Vicuna benchmark
+- Initial Release: 2023-05-23 <br>
+
+**Reference**
+- [GitHub - QLoRA](https://github.com/artidoro/qlora)
+- [arXiv Paper](https://arxiv.org/abs/2305.14314)
+- [Tim Dettmers' Tweet](https://twitter.com/Tim_Dettmers/status/1661379354507476994)
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 
-<br>
-
-
-# Alpaca
+# Appendix
+## Alpaca
 Alpaca 7B is a model derived from the [LLaMA 7B model](https://ai.facebook.com/blog/large-language-model-llama-meta-ai/) of [Meta](https://about.meta.com/), fine-tuned using 52K instruction-following demonstrations. In our initial evaluation, Alpaca demonstrates similar qualitative behavior to OpenAI's text-davinci-003 model, despite being significantly smaller and more affordable to reproduce (<$600). You can find the code release on [LLaMA GitHub repository](https://github.com/facebookresearch/llama).
 
 
-# LoRA and QLoRA
+## LoRA and QLoRA
 Applying a method to fine-tune only a subset of LLM weights and optimize GPU utilization in the [Stanford Alpaca.](https://crfm.stanford.edu/2023/03/13/alpaca.html)
 - [*LoRA*](https://github.com/microsoft/LoRA)(*Lo*w-*R*ank *A*daptation of Large Language Models) is a method for adapting large-scale pre-trained language models to specific tasks by introducing trainable rank decomposition matrices, significantly reducing the number of trainable parameters and GPU memory requirements, while maintaining or surpassing the performance of traditional fine-tuning approaches on various models.
 - [*QLoRA*](https://github.com/artidoro/qlora)(*Q*uantized *Lo*w-*R*ank *A*daptation of Large Language Models) is an efficient finetuning approach that reduces memory usage while maintaining high performance, enabling the finetuning of large language models on a single GPU and achieving state-of-the-art results on various benchmarks.
@@ -42,7 +57,7 @@ Applying a method to fine-tune only a subset of LLM weights and optimize GPU uti
 
 <br>
 
-# [Alpaca LoRA](https://github.com/tloen/alpaca-lora)
+## [Alpaca LoRA](https://github.com/tloen/alpaca-lora)
 Includes code for replicating Stanford Alpaca's results using low-rank adaptation (LoRA). They offer an Instruct model of similar quality to `text-davinci-003` that can run on a Raspberry Pi for research purposes. The code can be easily extended to larger models like 13b, 30b, and 65b.
 In addition to the training code, which can run within hours on a single RTX 4090, they provide a script for downloading and performing inference on the foundation model and LoRA, along with the LoRA weights. They utilize Hugging Face's PEFT and Tim Dettmers' bitsandbytes for efficient and cost-effective fine-tuning.
 The LoRA model produces outputs comparable to the Stanford Alpaca model without hyperparameter tuning (see included outputs). Further tuning may lead to better performance, so tey encourage interested users to try it out and share their results.
@@ -64,7 +79,7 @@ docker-compose -f docker/docker-compose.yml up
 ### Official Weights Alpaca Lora
 The most recent `Official Alpaca LoRA` adapter available at tloen/alpaca-lora-7b was trained on March 26 with the following command:
 
-## Fine-tuning Alpaca Lora
+### Fine-tuning Alpaca Lora
 ```
 python finetune.py \
     --base_model 'decapoda-research/llama-7b-hf' \
@@ -110,7 +125,7 @@ python finetune.py ^
 </details>
 
 
-## Generate (Inference) Alpaca Lora
+### Generate (Inference) Alpaca Lora
 
 ```
 python generate.py \
@@ -157,11 +172,11 @@ python finetune.py ^
 
 <br><br>
 
-# Alpaca [QLoRA](https://github.com/artidoro/qlora)
+## Alpaca [QLoRA](https://github.com/artidoro/qlora)
 QLoRA is an efficient finetuning approach that allows for finetuning a 65B parameter model on a single 48GB GPU while maintaining full 16-bit finetuning task performance. It utilizes 4-bit quantization and Low Rank Adapters (LoRA) to reduce memory usage. The best model, Guanaco, surpasses previous models on the Vicuna benchmark, achieving 99.3% of ChatGPT's performance level with just 24 hours of finetuning on a single GPU. QLoRA introduces innovations such as 4-bit NormalFloat (NF4) data type, Double Quantization, and Paged Optimizers to save memory without sacrificing performance. Over 1,000 models were finetuned using QLoRA, demonstrating state-of-the-art results across various datasets and model types. 
 
 
-## Fine-tuning Alpaca QLoRA
+### Fine-tuning Alpaca QLoRA
 You can specify the path to your dataset using the `--dataset` argument. If the `--dataset_format` argument is not set, it will default to the Alpaca format. Here are a few examples:
 Training with an alpaca format dataset:
 ```
@@ -178,12 +193,12 @@ python qlora.py --dataset="./data/ko_shargpt_deepl_cleaned_v1.json" --dataset_fo
 <br>
 
 
-# [Vicuna](https://huggingface.co/lmsys) using [FastChat](https://github.com/lm-sys/FastChat)
+## [Vicuna](https://huggingface.co/lmsys) using [FastChat](https://github.com/lm-sys/FastChat)
 An open source chatbot impressing GPT-4 with 90% Chat-GPT quality. 
 
 <br>
 
-# [Falcon](https://huggingface.co/tiiuae/falcon-7b) from [Hugging Face](https://huggingface.co/)
+## [Falcon](https://huggingface.co/tiiuae/falcon-7b) from [Hugging Face](https://huggingface.co/)
 Falcon-7B and Falcon-40B have been trained on 1.5 trillion and 1 trillion tokens respectively, in line with modern models optimising for inference. The key ingredient for the high quality of the Falcon models is their training data, predominantly based (>80%) on [Falcon RefinedWeb](https://huggingface.co/datasets/tiiuae/falcon-refinedweb) — a novel massive web dataset based on CommonCrawl. 
 
 <br><br>
