@@ -13,8 +13,6 @@ Development Status :: 2 - Pre-Alpha <br>
 [GORANI](https://github.com/dsdanielpark/GORANI) is a fine-tuned LLaMA2 model using the preprocessed data from [Korean Guanaco Jindo](https://github.com/dsdanielpark/ko-guanaco-jindo) and various architectures based on [LLaMA2](https://ai.meta.com/llama/) from [Meta AI](https://ai.meta.com/). <br>
 The `jindo` in `ko-guanaco-jindo` refers to the Korean dog breed, Jindo. The term `jindo` signifies a language model specialized in preprocessing Korean language datasets, similar to `lingo`, and aims to be a lightweight and fast model tailored for processing Korean datasets for LLM(Large Language Model, "LLM") training. 
 Through this experiment, we aim to translate and fine-tune the LLM models for the purpose of generating Korean LLMs. Additionally, we will explore the possibility of fine-tuning with limited GPU resources.
-After using the translator to translate the contents of SharGPT, an alpaca model fine-tuned specifically for language translation tasks.
-
 
 ## Datasets
 Data Pipeline: Please check the [data processing](https://github.com/dsdanielpark/ko-alpaca-jindo/blob/main/documents/DATA_PROCESSING.md) method and the approach for [revisions](https://github.com/dsdanielpark/ko-alpaca-jindo/blob/main/documents/DATA_REVISION.md). Please check the following repository for high-quality large-scale datasets in alpaca format for LLaMA finetuning: [Korean Open LLM Datasets(KOLD) Chain](https://github.com/dsdanielpark/korean-open-llm-datasets-chain).
