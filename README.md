@@ -202,6 +202,15 @@ An open source chatbot impressing GPT-4 with 90% Chat-GPT quality.
 ## [Falcon](https://huggingface.co/tiiuae/falcon-7b) from [Hugging Face](https://huggingface.co/)
 Falcon-7B and Falcon-40B have been trained on 1.5 trillion and 1 trillion tokens respectively, in line with modern models optimising for inference. The key ingredient for the high quality of the Falcon models is their training data, predominantly based (>80%) on [Falcon RefinedWeb](https://huggingface.co/datasets/tiiuae/falcon-refinedweb) — a novel massive web dataset based on CommonCrawl. 
 
+<br>
+
+## [Orca](https://huggingface.co/papers/2306.02707)
+Orca presents a novel approach to training large language models, combining progressive learning and teacher assistance to enhance imitation learning.
+
+<br>
+
+## [Long LLaMA](https://github.com/CStanKonrad/long_llama)
+LongLLaMA is built upon the foundation of OpenLLaMA and fine-tuned using the Focused Transformer (FoT) method.
 <br><br>
 
 # [QnA](https://github.com/dsdanielpark/ko-alpaca-lingo/blob/main/documents/QNA.md)
