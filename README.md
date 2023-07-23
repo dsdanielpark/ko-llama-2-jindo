@@ -246,8 +246,6 @@ Sincerely grateful for any reports on new features or bugs. Your valuable feedba
 - E-mail: parkminwoo1991@gmail.com <br>
 
 
-## Appendix 
-
 ### How can delete cached model weight
 ```
 pip install huggingface_hub["cli"]
