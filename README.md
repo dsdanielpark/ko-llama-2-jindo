@@ -24,7 +24,7 @@ Delta weights over the original Llama model is released under [CC BY-NC-SA-4.0](
 2. [LLaMA2](https://ai.meta.com/llama/) from [Meta AI](https://ai.meta.com/)
 
 ## Reference Model
-### Guanaco
+### [Guanaco](https://huggingface.co/JosephusCheung/Guanaco)
 Guanaco is an LLM based on the QLoRA 4-bit fine-tuning method developed by Tim Dettmers et. al. in the UW NLP group. It achieves 99% ChatGPT performance on the Vicuna benchmark.
 
 **Features**
