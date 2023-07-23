@@ -17,9 +17,11 @@ After using the translator to translate the contents of SharGPT, an alpaca model
 Data Pipeline: Please check the [data processing](https://github.com/dsdanielpark/ko-alpaca-jindo/blob/main/documents/DATA_PROCESSING.md) method and the approach for [revisions](https://github.com/dsdanielpark/ko-alpaca-jindo/blob/main/documents/DATA_REVISION.md). Please check the following repository for high-quality large-scale datasets in alpaca format for LLaMA finetuning: [Korean Open LLM Datasets(KOLD) Chain](https://github.com/dsdanielpark/korean-open-llm-datasets-chain).
 
 
-## Foundation Model: [LLaMA](https://ai.meta.com/blog/large-language-model-llama-meta-ai/) from [Meta AI](https://ai.meta.com/)
+## Foundation Models
+1. [LLaMA](https://ai.meta.com/blog/large-language-model-llama-meta-ai/) from [Meta AI](https://ai.meta.com/)
 If you want to download the official model, fill this [official request form](https://docs.google.com/forms/d/e/1FAIpQLSfqNECQnMkycAp2jP4Z9TFX0cGR4uf7b_fBxjY_OjhJILlKGA/viewform) and wait.
-Delta weights over the original Llama model is released under [CC BY-NC-SA-4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/). 
+Delta weights over the original Llama model is released under [CC BY-NC-SA-4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/).
+2. [LLaMA2](https://ai.meta.com/llama/) from [Meta AI](https://ai.meta.com/)
 
 
 
