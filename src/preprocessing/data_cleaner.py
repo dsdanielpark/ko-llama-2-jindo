@@ -6,7 +6,7 @@ Date: July 4, 2023
 Python Version: Requires Python 3.8 or above
 Description: This file should be executed using Python 3.8 or above.
 """
-
+import time
 from utilfunction import find_path
 import json
 import concurrent.futures
@@ -19,13 +19,24 @@ class DataProcessor:
             self.data = json.load(f)
         self.excluded_data = []
 
+    def step_completion(func):
+        def wrapper(*args, **kwargs):
+            start_time = time.time()
+            result = func(*args, **kwargs)
+            end_time = time.time()
+            print(f"{func.__name__} completed successfully in {end_time - start_time:.2f} seconds.")
+            return result
+        return wrapper
+
     @staticmethod
+    @step_completion
     def remove_specific_words(data):
         word_set = {'sure!', 'great!', 'Certainly!', "Sure!", "Great!", "Great, ", "great, ",
                     "sure, ", "Sure, ", "Sure! "}
         return [d for d in data if not any(word in d['input'] for word in word_set)]
 
     @staticmethod
+    @step_completion
     def remove_short_fields(data):
         try:
             return [d for d in data if (input_len := len(d['input'])) > 4 and (output_len := len(d['output'])) > 4]
@@ -34,6 +45,7 @@ class DataProcessor:
             return data
 
     @staticmethod
+    @step_completion
     def replace_sure_translation(data):
         for d in data:
             try:
@@ -45,6 +57,7 @@ class DataProcessor:
         return data
 
     @staticmethod
+    @step_completion
     def delete_error_korean_prefix(data):
         for d in data:
             try:
@@ -54,6 +67,7 @@ class DataProcessor:
         return data
 
     @staticmethod
+    @step_completion
     def replace_output_prefix(data):
         prefix_set = {"을 ", "를 ", "이 ", "가 ", "h", "은 ", "는 ", "에 ", "으 ", "의", "예, ", "^[A-Za-z] ", "^[ㄱ-ㅎㅏ-ㅣ가-힣] ", "^[0-9] ", ".", ","}
         exclued_data = []
@@ -69,8 +83,8 @@ class DataProcessor:
         return exclued_data
 
 
-
     @staticmethod
+    @step_completion
     def do_not_translate_code_snippet(data):
         for d in data:
             try:
@@ -88,7 +102,9 @@ class DataProcessor:
 
         return data
 
+
     @staticmethod
+    @step_completion
     def remove_duplicates(data):
         unique_data = []
         seen_inputs = set()
@@ -105,6 +121,7 @@ class DataProcessor:
         return unique_data
 
     @staticmethod
+    @step_completion
     def remove_deletion_and_addition(data):
         for d in data:
             input_value = d["input"]
@@ -143,11 +160,12 @@ class DataProcessor:
         return flattened_list
 
     @staticmethod
+    @step_completion
     def write_to_file(data, file_path):
         with open(file_path, "w", encoding="utf-8") as file:
             json.dump(data, file, ensure_ascii=False, indent=4, separators=(',', ':'))
 
-
+    @step_completion
     def process_json_file(self, steps, output_file_path, dummy_file_path):
         for step in steps:
             with concurrent.futures.ThreadPoolExecutor() as executor:
@@ -188,51 +206,52 @@ class DataProcessor:
         self.write_to_file(self.data, output_file_path)
         self.write_to_file(self.excluded_data, dummy_file_path)
 
-        @staticmethod
-        def static_process_json_file(steps, input_file_path, output_file_path, dummy_file_path):
-            with open(input_file_path) as f:
-                data = json.load(f)
-            excluded_data = []
-            
-            for step in steps:
-                with concurrent.futures.ThreadPoolExecutor() as executor:
-                    if 'step1' in step:
-                        data = list(executor.map(DataProcessor.remove_specific_words, [data]))
-                        data = DataProcessor.flatten_list(data)
 
-                    if 'step2' in step:
-                        data = list(executor.map(DataProcessor.remove_short_fields, [data]))
-                        data = DataProcessor.flatten_list(data)
+    @staticmethod
+    def static_process_json_file(steps, input_file_path, output_file_path, dummy_file_path):
+        print(f'Qued steps: {steps}')
+        with open(input_file_path) as f:
+            data = json.load(f)
+        excluded_data = []
+        
+        for step in steps:
+            with concurrent.futures.ThreadPoolExecutor() as executor:
+                if 'step1' in step:
+                    data = list(executor.map(DataProcessor.remove_specific_words, [data]))
+                    data = DataProcessor.flatten_list(data)
 
-                    if 'step3' in step:
-                        data = list(executor.map(DataProcessor.replace_sure_translation, [data]))
-                        data = DataProcessor.flatten_list(data)
+                if 'step2' in step:
+                    data = list(executor.map(DataProcessor.remove_short_fields, [data]))
+                    data = DataProcessor.flatten_list(data)
 
-                    if 'step4' in step:
-                        data = list(executor.map(DataProcessor.delete_error_korean_prefix, [data]))
-                        data = DataProcessor.flatten_list(data)
+                if 'step3' in step:
+                    data = list(executor.map(DataProcessor.replace_sure_translation, [data]))
+                    data = DataProcessor.flatten_list(data)
 
-                    if 'step5' in step:
-                        data = list(executor.map(DataProcessor.do_not_translate_code_snippet, [data]))
-                        data = DataProcessor.flatten_list(data)
+                if 'step4' in step:
+                    data = list(executor.map(DataProcessor.delete_error_korean_prefix, [data]))
+                    data = DataProcessor.flatten_list(data)
 
-                    if 'step6' in step:
-                        data = list(executor.map(DataProcessor.remove_duplicates, [data]))
-                        data = DataProcessor.flatten_list(data)
+                if 'step5' in step:
+                    data = list(executor.map(DataProcessor.do_not_translate_code_snippet, [data]))
+                    data = DataProcessor.flatten_list(data)
 
-                    if 'step7' in step:
-                        excluded_data = list(executor.map(DataProcessor.replace_output_prefix, [data]))
-                        excluded_data = DataProcessor.flatten_list(excluded_data)
-                        data = [d for d in data if d not in excluded_data]
+                if 'step6' in step:
+                    data = list(executor.map(DataProcessor.remove_duplicates, [data]))
+                    data = DataProcessor.flatten_list(data)
 
-                    if 'step8' in step:
-                        data = list(executor.map(DataProcessor.remove_deletion_and_addition, [data]))
-                        data = DataProcessor.flatten_list(data)
+                if 'step7' in step:
+                    excluded_data = list(executor.map(DataProcessor.replace_output_prefix, [data]))
+                    excluded_data = DataProcessor.flatten_list(excluded_data)
+                    data = [d for d in data if d not in excluded_data]
 
-            data = DataProcessor.flatten_list(data)
-            DataProcessor.write_to_file(data, output_file_path)
-            DataProcessor.write_to_file(excluded_data, dummy_file_path)
+                if 'step8' in step:
+                    data = list(executor.map(DataProcessor.remove_deletion_and_addition, [data]))
+                    data = DataProcessor.flatten_list(data)
 
+        data = DataProcessor.flatten_list(data)
+        DataProcessor.write_to_file(data, output_file_path)
+        DataProcessor.write_to_file(excluded_data, dummy_file_path)
 
 
 if __name__ == "__main__":
