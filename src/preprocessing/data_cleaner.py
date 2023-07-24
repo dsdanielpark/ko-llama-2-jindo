@@ -129,15 +129,17 @@ class DataProcessor:
 
             input_words = input_value.split()
             output_words = output_value.split()
-
-            if len(output_words[0]) > 1 and len(input_words[0]) > 2:
-                if len(set(output_words[0].lower()) - set(input_words[0].lower())) < 2 and \
-                        input_words[0][1].lower() == output_words[0][0].lower() and \
-                        input_words[0][2].lower() == output_words[0][1].lower():
-                    output_words[0] = input_words[0]
-                    output_value = " ".join(output_words)
-                    d["output"] = output_value
-
+            try:
+                if len(output_words[0]) > 1 and len(input_words[0]) > 2:
+                    if len(set(output_words[0].lower()) - set(input_words[0].lower())) < 2 and \
+                            input_words[0][1].lower() == output_words[0][0].lower() and \
+                            input_words[0][2].lower() == output_words[0][1].lower():
+                        output_words[0] = input_words[0]
+                        output_value = " ".join(output_words)
+                        d["output"] = output_value
+            except:
+                continue
+            
             if output_words[0] == "물론,":
                 output_words[0] = "물론이죠. "
                 output_value = " ".join(output_words)
@@ -146,6 +148,7 @@ class DataProcessor:
             if len(output_words[0]) == 1 and output_words[0].isalpha() and output_words[0].isascii() and output_words[0].lower() != "a":
                 output_words[0] = ""
                 output_value = " ".join(output_words)
+                d["output"] = output_value
 
         return data
 
