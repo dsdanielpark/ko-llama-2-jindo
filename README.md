@@ -29,7 +29,6 @@ Delta weights over the original Llama model is released under [CC BY-NC-SA-4.0](
 Guanaco is an LLM based on the QLoRA 4-bit fine-tuning method developed by Tim Dettmers et. al. in the UW NLP group. It achieves 99% ChatGPT performance on the Vicuna benchmark.
 
 **Features**
-
 - Uses LoRA fine-tuning method
 - Fine-tunes up to a 65B parameter model on a 48GB GPU without performance loss compared to 16-bit models
 - Outperforms all previous models on the Vicuna benchmark
@@ -38,7 +37,7 @@ Guanaco is an LLM based on the QLoRA 4-bit fine-tuning method developed by Tim D
 **Reference**
 - [GitHub - QLoRA](https://github.com/artidoro/qlora)
 - [arXiv Paper](https://arxiv.org/abs/2305.14314)
-- [Tim Dettmers' Tweet](https://twitter.com/Tim_Dettmers/status/1661379354507476994)
+
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
