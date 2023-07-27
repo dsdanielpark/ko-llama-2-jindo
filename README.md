@@ -4,41 +4,36 @@ Development Status :: 2 - Pre-Alpha <br>
 
 ##### [Korean Guanaco Jindo](https://github.com/dsdanielpark/ko-guanaco-jindo) is a preprocessing LLM (Language Model) designed to refine various LLM datasets
 
-# Korean Guanaco Jindo [![](https://img.shields.io/badge/Language-English-lightgrey)](https://github.com/dsdanielpark/ko-alpaca-jindo) [![](https://img.shields.io/badge/%EC%96%B8%EC%96%B4-%ED%95%9C%EA%B5%AD%EC%96%B4-lightgrey)](https://github.com/dsdanielpark/ko-alpaca-jindo/blob/main/documents/README_KO.md)
+# Korean LLaMA2 Jindo [![](https://img.shields.io/badge/Language-English-lightgrey)](https://github.com/dsdanielpark/ko-alpaca-jindo) [![](https://img.shields.io/badge/%EC%96%B8%EC%96%B4-%ED%95%9C%EA%B5%AD%EC%96%B4-lightgrey)](https://github.com/dsdanielpark/ko-alpaca-jindo/blob/main/documents/README_KO.md)
 
 
 
 
-[Korean Guanaco Jindo](https://github.com/dsdanielpark/ko-guanaco-jindo) is a preprocessing LLM (Language Model) designed to refine various LLM datasets such as alpaca, falcon, guanaco, and wizard. Korean Guanaco Jindo is trained based on the [Korean-Open-LLM-Datasets (KOLD) Chain](https://github.com/dsdanielpark/korean-open-llm-datasets-chain), which is a pipeline configured to utilize high-quality Korean datasets. It employs the same training method as Guanaco. <br>
-[GORANI](https://github.com/dsdanielpark/GORANI) is a fine-tuned LLaMA2 model using the preprocessed data from [Korean Guanaco Jindo](https://github.com/dsdanielpark/ko-guanaco-jindo) and various architectures based on [LLaMA2](https://ai.meta.com/llama/) from [Meta AI](https://ai.meta.com/). <br>
-The `jindo` in `ko-guanaco-jindo` refers to the Korean dog breed, Jindo. The term `jindo` signifies a language model specialized in preprocessing Korean language datasets, similar to `lingo`, and aims to be a lightweight and fast model tailored for processing Korean datasets for LLM(Large Language Model, "LLM") training. 
+[Korean LLaMA2 Jindo](https://github.com/dsdanielpark/ko-llama-2-jindo) is a preprocessing LLM (Language Model) designed to refine various LLM datasets such as alpaca, falcon, guanaco, and wizard. Korean LLaMA2 Jindo is trained based on the [Korean-Open-LLM-Datasets (KOLD) Chain](https://github.com/dsdanielpark/korean-open-llm-datasets-chain), which is a pipeline configured to utilize high-quality Korean datasets. It employs the same training method as Guanaco. <br>
+[KOLANI](https://github.com/dsdanielpark/KOLANI) is a fine-tuned LLaMA2 model using the preprocessed data from [Korean LLaMA2 Jindo](https://github.com/dsdanielpark/ko-llama-2-jindo) and various architectures based on [LLaMA2](https://ai.meta.com/llama/) from [Meta AI](https://ai.meta.com/). <br>
+The `jindo` in `ko-llama2-jindo` refers to the Korean dog breed, Jindo. The term `jindo` signifies a language model specialized in preprocessing Korean language datasets, similar to `lingo`, and aims to be a lightweight and fast model tailored for processing Korean datasets for LLM(Large Language Model, "LLM") training. 
 Through this experiment, we aim to translate and fine-tune the LLM models for the purpose of generating Korean LLMs. Additionally, we will explore the possibility of fine-tuning with limited GPU resources.
 
 ## Datasets
 Data Pipeline: Please check the [data processing](https://github.com/dsdanielpark/ko-alpaca-jindo/blob/main/documents/DATA_PROCESSING.md) method and the approach for [revisions](https://github.com/dsdanielpark/ko-alpaca-jindo/blob/main/documents/DATA_REVISION.md). Please check the following repository for high-quality large-scale datasets in alpaca format for LLaMA finetuning: [Korean Open LLM Datasets(KOLD) Chain](https://github.com/dsdanielpark/korean-open-llm-datasets-chain).
-
 
 ## Foundation Model
 1. [LLaMA](https://ai.meta.com/blog/large-language-model-llama-meta-ai/) from [Meta AI](https://ai.meta.com/)
 If you want to download the official model, fill this [official request form](https://docs.google.com/forms/d/e/1FAIpQLSfqNECQnMkycAp2jP4Z9TFX0cGR4uf7b_fBxjY_OjhJILlKGA/viewform) and wait.
 Delta weights over the original Llama model is released under [CC BY-NC-SA-4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/). <br>
 2. [LLaMA2](https://ai.meta.com/llama/) from [Meta AI](https://ai.meta.com/)
-
-## Reference Model
-### [Guanaco](https://huggingface.co/JosephusCheung/Guanaco)
+3. Reference: Guanaco
+[Guanaco](https://huggingface.co/JosephusCheung/Guanaco)
 Guanaco is an LLM based on the QLoRA 4-bit fine-tuning method developed by Tim Dettmers et. al. in the UW NLP group. It achieves 99% ChatGPT performance on the Vicuna benchmark.
 
 **Features**
-
 - Uses LoRA fine-tuning method
 - Fine-tunes up to a 65B parameter model on a 48GB GPU without performance loss compared to 16-bit models
-- Outperforms all previous models on the Vicuna benchmark
 - Initial Release: 2023-05-23 <br>
 
 **Reference**
-- [GitHub - QLoRA](https://github.com/artidoro/qlora)
-- [arXiv Paper](https://arxiv.org/abs/2305.14314)
-- [Tim Dettmers' Tweet](https://twitter.com/Tim_Dettmers/status/1661379354507476994)
+
+
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
@@ -269,3 +264,5 @@ huggingface-cli delete-cache
 [2] https://github.com/huggingface/peft <br>
 [3] https://github.com/artidoro/qlora <br>
 [4] https://huggingface.co/timdettmers/qlora-alpaca-7b <br>
+[5] https://github.com/artidoro/qlora <br>
+[6] https://arxiv.org/abs/2305.14314 <br>
