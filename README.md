@@ -202,7 +202,7 @@ LongLLaMA is built upon the foundation of OpenLLaMA and fine-tuned using the Foc
 <br><br>
 
 
-## GPTQ
+## [GPTQ](https://github.com/IST-DASLab/gptq)
 GPTQ is the state-of-the-art one-shot weight quantization method. This code is built upon [GPTQ](https://github.com/IST-DASLab/gptq), [GPTQ-for-LLaMa](https://github.com/qwopqwop200/GPTQ-for-LLaMa), [GPTQ-triton](https://github.com/fpgaminer/GPTQ-triton), [Auto-GPTQ](https://github.com/PanQiWei/AutoGPTQ). 
 
 ```shell
