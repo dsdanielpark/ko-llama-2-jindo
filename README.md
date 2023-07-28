@@ -203,7 +203,7 @@ LongLLaMA is built upon the foundation of OpenLLaMA and fine-tuned using the Foc
 
 
 ## [GPTQ](https://github.com/IST-DASLab/gptq)
-GPTQ is the state-of-the-art one-shot weight quantization method. This code is built upon [GPTQ](https://github.com/IST-DASLab/gptq), [GPTQ-for-LLaMa](https://github.com/qwopqwop200/GPTQ-for-LLaMa), [GPTQ-triton](https://github.com/fpgaminer/GPTQ-triton), [Auto-GPTQ](https://github.com/PanQiWei/AutoGPTQ). 
+GPTQ is the state-of-the-art one-shot weight quantization method. This code is built upon [GPTQ](https://github.com/IST-DASLab/gptq), [GPTQ-for-LLaMA](https://github.com/qwopqwop200/GPTQ-for-LLaMa), [GPTQ-triton](https://github.com/fpgaminer/GPTQ-triton), [Auto-GPTQ](https://github.com/PanQiWei/AutoGPTQ). 
 
 ```shell
 conda create --name gptq python=3.9 -y
@@ -247,7 +247,7 @@ CUDA_VISIBLE_DEVICES=0 python llama_inference_offload.py ${MODEL_DIR} --wbits 4 
 It takes about 180 seconds to generate 45 tokens(5->50 tokens) on single RTX3090 based on LLaMa-65B. pre_layer is set to 50.
 ```
 
-### Benchmark performance for FC2 layer of LLaMa-7B
+### Benchmark performance for FC2 layer of LLaMA-7B
 ```shell
 CUDA_VISIBLE_DEVICES=0 python test_kernel.py
 ```
