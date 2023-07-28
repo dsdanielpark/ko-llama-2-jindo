@@ -203,7 +203,7 @@ LongLLaMA is built upon the foundation of OpenLLaMA and fine-tuned using the Foc
 
 
 ## GPTQ
-GPTQ is the state-of-the-art one-shot weight quantization method. This code is built upon [GPTQ](https://github.com/IST-DASLab/gptq), [GPTQ-for-LLaMa](https://github.com/qwopqwop200/GPTQ-for-LLaMa), [GPTQ-triton](https://github.com/fpgaminer/GPTQ-triton), [Auto-GPTQ](https://github.com/PanQiWei/AutoGPTQ).
+GPTQ is the state-of-the-art one-shot weight quantization method. This code is built upon [GPTQ](https://github.com/IST-DASLab/gptq), [GPTQ-for-LLaMa](https://github.com/qwopqwop200/GPTQ-for-LLaMa), [GPTQ-triton](https://github.com/fpgaminer/GPTQ-triton), [Auto-GPTQ](https://github.com/PanQiWei/AutoGPTQ). 
 
 ```shell
 conda create --name gptq python=3.9 -y
@@ -253,14 +253,16 @@ CUDA_VISIBLE_DEVICES=0 python test_kernel.py
 ```
 
 ### Quantization
+
+Most quantization packages have been developed based on the Linux OS and may not be compatible with Windows.
 Basically, 4-bit quantization and 128 groupsize are recommended. You can also export quantization parameters with toml+numpy format.
 
 ```shell
 CUDA_VISIBLE_DEVICES=0 python llama.py ${MODEL_DIR} c4 --wbits 4 --true-sequential --act-order --groupsize 128 --quant-directory ${TOML_DIR}
 ```
 for `ko-llama-2-jindo-7b-instruct`
-```cmd
-set CUDA_VISIBLE_DEVICES=0 && python llama.py "./ko-llama-2-jindo-7b-instruct" c4 --wbits 4 --true-sequential --act-order --groupsize 128 --quant-directory "./ko-llama-2-jindo-7b-instruct-4bit-128g-gptq"
+```shell
+CUDA_VISIBLE_DEVICES=0 python python llama.py "./ko-llama-2-jindo-7b-instruct" c4 --wbits 4 --true-sequential --act-order --groupsize 128 --quant-directory "./ko-llama-2-jindo-7b-instruct-4bit-128g-gptq"
 
 ```
 
