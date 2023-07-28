@@ -7,8 +7,6 @@ Development Status :: 2 - Pre-Alpha <br>
 # Korean LLaMA2 Jindo [![](https://img.shields.io/badge/Language-English-lightgrey)](https://github.com/dsdanielpark/ko-alpaca-jindo) [![](https://img.shields.io/badge/%EC%96%B8%EC%96%B4-%ED%95%9C%EA%B5%AD%EC%96%B4-lightgrey)](https://github.com/dsdanielpark/ko-alpaca-jindo/blob/main/documents/README_KO.md)
 
 
-
-
 [Korean LLaMA2 Jindo](https://github.com/dsdanielpark/ko-llama-2-jindo) is a preprocessing LLM (Language Model) designed to refine various LLM datasets such as alpaca, falcon, guanaco, and wizard. Korean LLaMA2 Jindo is trained based on the [Korean-Open-LLM-Datasets (KOLD) Chain](https://github.com/dsdanielpark/korean-open-llm-datasets-chain), which is a pipeline configured to utilize high-quality Korean datasets. It employs the same training method as Guanaco. <br>
 [KOLANI](https://github.com/dsdanielpark/KOLANI) is a fine-tuned LLaMA2 model using the preprocessed data from [Korean LLaMA2 Jindo](https://github.com/dsdanielpark/ko-llama-2-jindo) and various architectures based on [LLaMA2](https://ai.meta.com/llama/) from [Meta AI](https://ai.meta.com/). <br>
 The `jindo` in `ko-llama2-jindo` refers to the Korean dog breed, Jindo. The term `jindo` signifies a language model specialized in preprocessing Korean language datasets, similar to `lingo`, and aims to be a lightweight and fast model tailored for processing Korean datasets for LLM(Large Language Model, "LLM") training. 
