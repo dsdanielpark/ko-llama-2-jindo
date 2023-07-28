@@ -203,6 +203,25 @@ Orca presents a novel approach to training large language models, combining prog
 LongLLaMA is built upon the foundation of OpenLLaMA and fine-tuned using the Focused Transformer (FoT) method.
 <br><br>
 
+
+## GPTQ
+GPTQ is the state-of-the-art one-shot weight quantization method. This code is built upon [GPTQ-for-LLaMa](https://github.com/qwopqwop200/GPTQ-for-LLaMa).
+
+```cmd
+conda create --name gptq python=3.9 -y
+conda activate gptq
+conda install pytorch torchvision torchaudio pytorch-cuda=11.7 -c pytorch -c nvidia
+# Via pypi
+# pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu117
+
+pip install -r requirements.txt
+python setup_cuda.py install
+
+# Benchmark performance for FC2 layer of LLaMa-7B
+CUDA_VISIBLE_DEVICES=0 python test_kernel.py
+```
+
+
 # [QnA](https://github.com/dsdanielpark/ko-alpaca-lingo/blob/main/documents/QNA.md)
 I have compiled some common and encountered errors, along with their solutions. I hope this will be helpful to many researchers. Before creating an issue, please search for it first. If you find an error along with its solution, I would appreciate it if you could provide a pull request.
 
