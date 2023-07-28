@@ -203,7 +203,7 @@ LongLLaMA is built upon the foundation of OpenLLaMA and fine-tuned using the Foc
 
 
 ## GPTQ
-GPTQ is the state-of-the-art one-shot weight quantization method. This code is built upon [GPTQ](https://github.com/IST-DASLab/gptq), [GPTQ-for-LLaMa](https://github.com/qwopqwop200/GPTQ-for-LLaMa), [GPTQ-triton](https://github.com/fpgaminer/GPTQ-triton).
+GPTQ is the state-of-the-art one-shot weight quantization method. This code is built upon [GPTQ](https://github.com/IST-DASLab/gptq), [GPTQ-for-LLaMa](https://github.com/qwopqwop200/GPTQ-for-LLaMa), [GPTQ-triton](https://github.com/fpgaminer/GPTQ-triton), [Auto-GPTQ](https://github.com/PanQiWei/AutoGPTQ).
 
 ```shell
 conda create --name gptq python=3.9 -y
@@ -213,7 +213,7 @@ conda install pytorch torchvision torchaudio pytorch-cuda=11.7 -c pytorch -c nvi
 # pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu117
 
 cd src/gptq
-pip install -r requirements.txt
+pip install -r requirements.txt 
 python setup_cuda.py install
 ```
 
