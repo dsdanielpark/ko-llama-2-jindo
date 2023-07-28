@@ -236,13 +236,13 @@ CUDA_VISIBLE_DEVICES=0 python llama.py ${MODEL_DIR} c4 --wbits 4 --groupsize 128
 # Benchmark FP16 baseline, note that the model will be split across all listed GPUs
 CUDA_VISIBLE_DEVICES=0,1,2,3,4 python llama.py ${MODEL_DIR} c4 --benchmark 2048 --check
 
-# model inference with the saved model
+# Model inference with the saved model
 CUDA_VISIBLE_DEVICES=0 python llama_inference.py ${MODEL_DIR} --wbits 4 --groupsize 128 --load llama7b-4bit-128g.pt --text "this is llama"
 
-# model inference with the saved model using safetensors loaded direct to gpu
+# Model inference with the saved model using safetensors loaded direct to gpu
 CUDA_VISIBLE_DEVICES=0 python llama_inference.py ${MODEL_DIR} --wbits 4 --groupsize 128 --load llama7b-4bit-128g.safetensors --text "this is llama" --device=0
 
-# model inference with the saved model with offload(This is very slow).
+# Model inference with the saved model with offload(This is very slow).
 CUDA_VISIBLE_DEVICES=0 python llama_inference_offload.py ${MODEL_DIR} --wbits 4 --groupsize 128 --load llama7b-4bit-128g.pt --text "this is llama" --pre_layer 16
 It takes about 180 seconds to generate 45 tokens(5->50 tokens) on single RTX3090 based on LLaMa-65B. pre_layer is set to 50.
 ```
