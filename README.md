@@ -217,7 +217,7 @@ pip install -r requirements.txt
 python setup_cuda.py install
 ```
 
-### LLaMA 1
+### Command example for LLaMA-1 
 ```shell
 #convert LLaMA to hf
 python convert_llama_weights_to_hf.py --input_dir /path/to/downloaded/llama/weights --model_size 7B --output_dir ./llama-hf
@@ -257,6 +257,11 @@ Basically, 4-bit quantization and 128 groupsize are recommended. You can also ex
 
 ```shell
 CUDA_VISIBLE_DEVICES=0 python llama.py ${MODEL_DIR} c4 --wbits 4 --true-sequential --act-order --groupsize 128 --quant-directory ${TOML_DIR}
+```
+for `ko-llama-2-jindo-7b-instruct`
+```cmd
+set CUDA_VISIBLE_DEVICES=0 && python llama.py "./ko-llama-2-jindo-7b-instruct" c4 --wbits 4 --true-sequential --act-order --groupsize 128 --quant-directory "./ko-llama-2-jindo-7b-instruct-4bit-128g-gptq"
+
 ```
 
 # [QnA](https://github.com/dsdanielpark/ko-alpaca-lingo/blob/main/documents/QNA.md)
