@@ -55,14 +55,14 @@ The LoRA model produces outputs comparable to the Stanford Alpaca model without 
 
 ### Docker Build
 By building with the following command, the built Docker image can be used with the name `ko-alpaca-lingo:latest`.
-```
+```shell
 docker build -t ko-alpaca-lingo:latest docker/
 ```
 
 ### Docker Compose
 
 By running the following command, the alpaca-lora service will run as a Docker container, and it can be accessed through the configured port (e.g., 7860).
-```
+```shell
 docker-compose -f docker/docker-compose.yml up
 ```
 
@@ -71,7 +71,7 @@ docker-compose -f docker/docker-compose.yml up
 The most recent `Official Alpaca LoRA` adapter available at tloen/alpaca-lora-7b was trained on March 26 with the following command:
 
 ### Fine-tuning Alpaca Lora
-```
+```cmd
 python finetune.py \
     --base_model 'decapoda-research/llama-7b-hf' \
     --data_path 'danielpark/ko_shargpt_deepl_cleaned_v1' \
@@ -93,7 +93,7 @@ python finetune.py \
 <details>
 <summary> Windows CMD</summary>
 
-```
+```cmd
 python finetune.py ^
     --base_model 'decapoda-research/llama-7b-hf' ^
     --data_path 'danielpark/ko_shargpt_deepl_cleaned_v1' ^
@@ -118,14 +118,14 @@ python finetune.py ^
 
 ### Generate (Inference) Alpaca Lora
 
-```
+```shell
 python generate.py \
     --load_8bit \
     --base_model 'decapoda-research/llama-7b-hf' \
     --lora_weights 'tloen/alpaca-lora-7b'
 ```
 Or
-```
+```shell
 python finetune.py \
     --base_model='decapoda-research/llama-7b-hf' \
     --num_epochs=10 \
@@ -139,14 +139,14 @@ python finetune.py \
 <details>
 <summary> Windows CMD</summary>
 
-```
+```cmd
 python generate.py ^
     --load_8bit ^
     --base_model 'decapoda-research/llama-7b-hf' ^
     --lora_weights 'tloen/alpaca-lora-7b'
 ```
 Or
-```
+```cmd
 python finetune.py ^
     --base_model='decapoda-research/llama-7b-hf' ^
     --num_epochs=10 ^
@@ -170,14 +170,14 @@ QLoRA is an efficient finetuning approach that allows for finetuning a 65B param
 ### Fine-tuning Alpaca QLoRA
 You can specify the path to your dataset using the `--dataset` argument. If the `--dataset_format` argument is not set, it will default to the Alpaca format. Here are a few examples:
 Training with an alpaca format dataset:
-```
+```shell
 python qlora.py --dataset="./data/ko_shargpt_deepl_cleaned_v1.json"
 ```
 Off-load was used to train with limited resources. Please refer to the following [Link](https://huggingface.co/docs/transformers/main/en/main_classes/quantization#offload-between-cpu-and-gpu) and [Git hash](https://github.com/dsdanielpark/ko-sharegpt-alpaca/commit/0c40cacadc724034ed578aaaae06d02c625be8af) for partial revisions. 
 
 
 Training with a self-instruct format dataset:
-```
+```shell
 python qlora.py --dataset="./data/ko_shargpt_deepl_cleaned_v1.json" --dataset_format="self-instruct"
 ```
 
@@ -205,9 +205,9 @@ LongLLaMA is built upon the foundation of OpenLLaMA and fine-tuned using the Foc
 
 
 ## GPTQ
-GPTQ is the state-of-the-art one-shot weight quantization method. This code is built upon [GPTQ-for-LLaMa](https://github.com/qwopqwop200/GPTQ-for-LLaMa).
+GPTQ is the state-of-the-art one-shot weight quantization method. This code is built upon [GPTQ](https://github.com/IST-DASLab/gptq), [GPTQ-for-LLaMa](https://github.com/qwopqwop200/GPTQ-for-LLaMa), [GPTQ-triton](https://github.com/fpgaminer/GPTQ-triton).
 
-```cmd
+```shell
 conda create --name gptq python=3.9 -y
 conda activate gptq
 conda install pytorch torchvision torchaudio pytorch-cuda=11.7 -c pytorch -c nvidia
@@ -220,7 +220,7 @@ python setup_cuda.py install
 ```
 
 ### LLaMA 1
-```
+```shell
 #convert LLaMA to hf
 python convert_llama_weights_to_hf.py --input_dir /path/to/downloaded/llama/weights --model_size 7B --output_dir ./llama-hf
 
@@ -250,9 +250,16 @@ It takes about 180 seconds to generate 45 tokens(5->50 tokens) on single RTX3090
 ```
 
 ### Benchmark performance for FC2 layer of LLaMa-7B
+```shell
 CUDA_VISIBLE_DEVICES=0 python test_kernel.py
 ```
 
+### Quantization
+Basically, 4-bit quantization and 128 groupsize are recommended. You can also export quantization parameters with toml+numpy format.
+
+```shell
+CUDA_VISIBLE_DEVICES=0 python llama.py ${MODEL_DIR} c4 --wbits 4 --true-sequential --act-order --groupsize 128 --quant-directory ${TOML_DIR}
+```
 
 # [QnA](https://github.com/dsdanielpark/ko-alpaca-lingo/blob/main/documents/QNA.md)
 I have compiled some common and encountered errors, along with their solutions. I hope this will be helpful to many researchers. Before creating an issue, please search for it first. If you find an error along with its solution, I would appreciate it if you could provide a pull request.
