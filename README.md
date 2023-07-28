@@ -22,9 +22,8 @@ Data Pipeline: Please check the [data processing](https://github.com/dsdanielpar
 If you want to download the official model, fill this [official request form](https://docs.google.com/forms/d/e/1FAIpQLSfqNECQnMkycAp2jP4Z9TFX0cGR4uf7b_fBxjY_OjhJILlKGA/viewform) and wait.
 Delta weights over the original Llama model is released under [CC BY-NC-SA-4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/). <br>
 2. [LLaMA2](https://ai.meta.com/llama/) from [Meta AI](https://ai.meta.com/)
-3. Reference model: Guanaco
-    [Guanaco](https://huggingface.co/JosephusCheung/Guanaco)
-    Guanaco is an LLM based on the QLoRA 4-bit fine-tuning method developed by Tim Dettmers et. al. in the UW NLP group. It achieves 99% ChatGPT performance on the Vicuna benchmark.
+3. Reference model: 
+    [Guanaco](https://huggingface.co/JosephusCheung/Guanaco) is an LLM based on the QLoRA 4-bit fine-tuning method developed by Tim Dettmers et. al. in the UW NLP group. It achieves 99% ChatGPT performance on the Vicuna benchmark.
     - Uses LoRA fine-tuning method
     - Fine-tunes up to a 65B parameter model on a 48GB GPU without performance loss compared to 16-bit models
     - Initial Release: 2023-05-23 <br>
