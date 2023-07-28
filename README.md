@@ -257,13 +257,13 @@ CUDA_VISIBLE_DEVICES=0 python test_kernel.py
 Most quantization packages have been developed based on the Linux OS and may not be compatible with Windows.
 Basically, 4-bit quantization and 128 groupsize are recommended. You can also export quantization parameters with toml+numpy format.
 
+Command pygptq for llama1
 ```shell
 CUDA_VISIBLE_DEVICES=0 python llama.py ${MODEL_DIR} c4 --wbits 4 --true-sequential --act-order --groupsize 128 --quant-directory ${TOML_DIR}
 ```
-for `ko-llama-2-jindo-7b-instruct`
+Command gptq for `ko-llama-2-jindo-7b-instruct`
 ```shell
-CUDA_VISIBLE_DEVICES=0 python python llama.py "./ko-llama-2-jindo-7b-instruct" c4 --wbits 4 --true-sequential --act-order --groupsize 128 --quant-directory "./ko-llama-2-jindo-7b-instruct-4bit-128g-gptq"
-
+python bloom.py danielpark/ko-llama-2-jindo-7b-instruct wikitext2 --wbits 8 --groupsize 128 --save danielpark/ko-llama-2-jindo-7b-instruct-4bit-128g-gptq
 ```
 
 # [QnA](https://github.com/dsdanielpark/ko-alpaca-lingo/blob/main/documents/QNA.md)
