@@ -217,9 +217,13 @@ pip install -r requirements.txt
 python setup_cuda.py install
 ```
 
-### Command example for LLaMA-1 
+### Command example for LLaMA
+```python
+import locale
+locale.getpreferredencoding = lambda: "UTF-8"
+```
 ```shell
-#convert LLaMA to hf
+# Convert LLaMA to hf
 python convert_llama_weights_to_hf.py --input_dir /path/to/downloaded/llama/weights --model_size 7B --output_dir ./llama-hf
 
 # Benchmark language generation with 4-bit LLaMA-7B:
