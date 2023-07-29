@@ -270,6 +270,9 @@ Command gptq for `ko-llama-2-jindo-7b-instruct`
 python bloom.py danielpark/ko-llama-2-jindo-7b-instruct wikitext2 --wbits 8 --groupsize 128 --save danielpark/ko-llama-2-jindo-7b-instruct-4bit-128g-gptq
 ```
 
+### alpaca finetuning using GPTQ
+https://github.com/PanQiWei/AutoGPTQ/blob/main/examples/quantization/quant_with_alpaca.py
+
 # [QnA](https://github.com/dsdanielpark/ko-alpaca-lingo/blob/main/documents/QNA.md)
 I have compiled some common and encountered errors, along with their solutions. I hope this will be helpful to many researchers. Before creating an issue, please search for it first. If you find an error along with its solution, I would appreciate it if you could provide a pull request.
 
