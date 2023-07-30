@@ -203,7 +203,7 @@ LongLLaMA is built upon the foundation of OpenLLaMA and fine-tuned using the Foc
 
 
 ## [GPTQ](https://github.com/IST-DASLab/gptq)
-GPTQ is the state-of-the-art one-shot weight quantization method. This code is built upon [GPTQ](https://github.com/IST-DASLab/gptq), [GPTQ-for-LLaMa](https://github.com/qwopqwop200/GPTQ-for-LLaMa), [GPTQ-triton](https://github.com/fpgaminer/GPTQ-triton), [Auto-GPTQ](https://github.com/PanQiWei/AutoGPTQ). 
+GPTQ is the state-of-the-art one-shot weight quantization method. This code is built upon [GPTQ](https://github.com/IST-DASLab/gptq), [GPTQ-for-LLaMA](https://github.com/qwopqwop200/GPTQ-for-LLaMa), [GPTQ-triton](https://github.com/fpgaminer/GPTQ-triton), [Auto-GPTQ](https://github.com/PanQiWei/AutoGPTQ). 
 
 ```shell
 conda create --name gptq python=3.9 -y
@@ -217,9 +217,13 @@ pip install -r requirements.txt
 python setup_cuda.py install
 ```
 
-### Command example for LLaMA-1 
+### Command example for LLaMA
+```python
+import locale
+locale.getpreferredencoding = lambda: "UTF-8"
+```
 ```shell
-#convert LLaMA to hf
+# Convert LLaMA to hf
 python convert_llama_weights_to_hf.py --input_dir /path/to/downloaded/llama/weights --model_size 7B --output_dir ./llama-hf
 
 # Benchmark language generation with 4-bit LLaMA-7B:
@@ -247,7 +251,7 @@ CUDA_VISIBLE_DEVICES=0 python llama_inference_offload.py ${MODEL_DIR} --wbits 4 
 It takes about 180 seconds to generate 45 tokens(5->50 tokens) on single RTX3090 based on LLaMa-65B. pre_layer is set to 50.
 ```
 
-### Benchmark performance for FC2 layer of LLaMa-7B
+### Benchmark performance for FC2 layer of LLaMA-7B
 ```shell
 CUDA_VISIBLE_DEVICES=0 python test_kernel.py
 ```
@@ -265,6 +269,9 @@ Command gptq for `ko-llama-2-jindo-7b-instruct`
 ```shell
 python bloom.py danielpark/ko-llama-2-jindo-7b-instruct wikitext2 --wbits 8 --groupsize 128 --save danielpark/ko-llama-2-jindo-7b-instruct-4bit-128g-gptq
 ```
+
+### alpaca finetuning using GPTQ
+https://github.com/PanQiWei/AutoGPTQ/blob/main/examples/quantization/quant_with_alpaca.py
 
 # [QnA](https://github.com/dsdanielpark/ko-alpaca-lingo/blob/main/documents/QNA.md)
 I have compiled some common and encountered errors, along with their solutions. I hope this will be helpful to many researchers. Before creating an issue, please search for it first. If you find an error along with its solution, I would appreciate it if you could provide a pull request.
