@@ -2,6 +2,9 @@ Development Status :: 2 - Pre-Alpha <br>
 *Copyright (c) 2023 MinWoo Park*
 
 
+After considering various factors, refactoring and re-documentation will be done before the release.
+
+
 ##### [Jindo](https://github.com/dsdanielpark/ko-guanaco-jindo)(sLLM) is a preprocessing LLM (Language Model) designed to refine various LLM datasets
 
 # Korean LLaMA2 Jindo [![](https://img.shields.io/badge/Language-English-lightgrey)](https://github.com/dsdanielpark/ko-alpaca-jindo) [![](https://img.shields.io/badge/%EC%96%B8%EC%96%B4-%ED%95%9C%EA%B5%AD%EC%96%B4-lightgrey)](https://github.com/dsdanielpark/ko-alpaca-jindo/blob/main/documents/README_KO.md)
