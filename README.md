@@ -269,12 +269,24 @@ Command pygptq for llama1
 CUDA_VISIBLE_DEVICES=0 python llama.py ${MODEL_DIR} c4 --wbits 4 --true-sequential --act-order --groupsize 128 --quant-directory ${TOML_DIR}
 ```
 Command gptq for `ko-llama-2-jindo-7b-instruct`
-```shell
+```
 python bloom.py danielpark/ko-llama-2-jindo-7b-instruct wikitext2 --wbits 8 --groupsize 128 --save danielpark/ko-llama-2-jindo-7b-instruct-4bit-128g-gptq
 ```
 
 ### alpaca finetuning using GPTQ
 https://github.com/PanQiWei/AutoGPTQ/blob/main/examples/quantization/quant_with_alpaca.py
+
+
+<br>
+
+
+## Quantinized using [llama.cpp](https://github.com/ggerganov/llama.cpp) to [GGML](https://github.com/ggerganov/ggml)
+For more details, visit [here](https://huggingface.co/danielpark/ko-llama-2-jindo-7b-instruct-ggml).
+```
+quantize.exe jindo-7b-instruct.ggmlv3.f16.bin jindo-7b-instruct.ggmlv3.q5_k_m.bin q5_k_m
+```
+
+
 
 # [QnA](https://github.com/dsdanielpark/ko-alpaca-lingo/blob/main/documents/QNA.md)
 I have compiled some common and encountered errors, along with their solutions. I hope this will be helpful to many researchers. Before creating an issue, please search for it first. If you find an error along with its solution, I would appreciate it if you could provide a pull request.
