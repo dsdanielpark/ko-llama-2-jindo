@@ -280,7 +280,7 @@ https://github.com/PanQiWei/AutoGPTQ/blob/main/examples/quantization/quant_with_
 <br>
 
 
-## Quantinized using [llama.cpp](https://github.com/ggerganov/llama.cpp) to [GGML](https://github.com/ggerganov/ggml)
+## Quantinization using [llama.cpp](https://github.com/ggerganov/llama.cpp) to [GGML](https://github.com/ggerganov/ggml)
 For more details, visit [here](https://huggingface.co/danielpark/ko-llama-2-jindo-7b-instruct-ggml).
 
 ```
