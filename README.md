@@ -2,6 +2,9 @@ Development Status :: 2 - Pre-Alpha <br>
 *Copyright (c) 2023 MinWoo Park*
 
 
+After considering various factors, refactoring and re-documentation will be done before the release.
+
+
 ##### [Jindo](https://github.com/dsdanielpark/ko-guanaco-jindo)(sLLM) is a preprocessing LLM (Language Model) designed to refine various LLM datasets
 
 # Korean LLaMA2 Jindo [![](https://img.shields.io/badge/Language-English-lightgrey)](https://github.com/dsdanielpark/ko-alpaca-jindo) [![](https://img.shields.io/badge/%EC%96%B8%EC%96%B4-%ED%95%9C%EA%B5%AD%EC%96%B4-lightgrey)](https://github.com/dsdanielpark/ko-alpaca-jindo/blob/main/documents/README_KO.md)
@@ -276,8 +279,8 @@ https://github.com/PanQiWei/AutoGPTQ/blob/main/examples/quantization/quant_with_
 # [QnA](https://github.com/dsdanielpark/ko-alpaca-lingo/blob/main/documents/QNA.md)
 I have compiled some common and encountered errors, along with their solutions. I hope this will be helpful to many researchers. Before creating an issue, please search for it first. If you find an error along with its solution, I would appreciate it if you could provide a pull request.
 
-# [GORANI](https://github.com/dsdanielpark/GORANI)
-Most open-source LLM models are derived from the open-source LLM weights of Meta, called LLaMA. The Python implementation of LLaMA and fine-tuning it for the Korean language can be found in the GORANI (고라니) project.
+# [KOLANI](https://github.com/dsdanielpark/KOLANI)
+Most open-source LLM models are derived from the open-source LLM weights of Meta, called LLaMA. The Python implementation of LLaMA and fine-tuning it for the Korean language can be found in the KOLANI(Korean LLM based on LLaMA2 Natural Inference Model,고라니) project.
 
 # License
 I hold no legal responsibility; <br>
