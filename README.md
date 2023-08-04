@@ -282,6 +282,24 @@ https://github.com/PanQiWei/AutoGPTQ/blob/main/examples/quantization/quant_with_
 
 ## Quantinized using [llama.cpp](https://github.com/ggerganov/llama.cpp) to [GGML](https://github.com/ggerganov/ggml)
 For more details, visit [here](https://huggingface.co/danielpark/ko-llama-2-jindo-7b-instruct-ggml).
+
+```
+cd llama.cpp
+
+python3 -m pip install -r requirements.txt
+python3 convert.py models/7B/
+
+    # [Optional] for models using BPE tokenizers 
+    python convert.py models/7B/ --vocabtype bpe
+
+# quantize the model to 4-bits (using q4_0 method)
+./quantize ./models/7B/ggml-model-f16.bin ./models/7B/ggml-model-q4_0.bin q4_0
+
+# run the inference
+./main -m ./models/7B/ggml-model-q4_0.bin -n 128
+```
+
+Windows-x86
 ```
 quantize.exe jindo-7b-instruct.ggmlv3.f16.bin jindo-7b-instruct.ggmlv3.q5_k_m.bin q5_k_m
 ```
