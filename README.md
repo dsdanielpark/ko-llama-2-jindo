@@ -273,7 +273,7 @@ Command gptq for `ko-llama-2-jindo-7b-instruct`
 python bloom.py danielpark/ko-llama-2-jindo-7b-instruct wikitext2 --wbits 8 --groupsize 128 --save danielpark/ko-llama-2-jindo-7b-instruct-4bit-128g-gptq
 ```
 
-### alpaca finetuning using GPTQ
+### alpaca fine-tuning using GPTQ
 https://github.com/PanQiWei/AutoGPTQ/blob/main/examples/quantization/quant_with_alpaca.py
 
 
@@ -300,9 +300,95 @@ python3 convert.py models/7B/
 ```
 
 Windows-x86
+Make ggml formatted weight using Q5_K_M method
 ```
 quantize.exe jindo-7b-instruct.ggmlv3.f16.bin jindo-7b-instruct.ggmlv3.q5_k_m.bin q5_k_m
 ```
+
+## GGML Formate Quantinization
+
+<details>
+<summary> See more... </summary>
+  
+### Quant Types
+
+
+#### GGML Quant Type
+
+| Quantization Type | Description                                                                                           | Bits per Weight (bpw) |
+|-------------------|-------------------------------------------------------------------------------------------------------|-----------------------|
+| GGML_TYPE_Q2_K    | "type-1" 2-bit quantization in super-blocks containing 16 blocks, each block having 16 weights. Block scales and mins are quantized with 4 bits.           | 2.5625                |
+| GGML_TYPE_Q3_K    | "type-0" 3-bit quantization in super-blocks containing 16 blocks, each block having 16 weights. Scales are quantized with 6 bits.                           | 3.4375                |
+| GGML_TYPE_Q4_K    | "type-1" 4-bit quantization in super-blocks containing 8 blocks, each block having 32 weights. Scales and mins are quantized with 6 bits.                    | 4.5                   |
+| GGML_TYPE_Q5_K    | "type-1" 5-bit quantization. Same super-block structure as GGML_TYPE_Q4_K resulting in 5.5 bpw.      | 5.5                   |
+| GGML_TYPE_Q6_K    | "type-0" 6-bit quantization. Super-blocks with 16 blocks, each block having 16 weights. Scales are quantized with 8 bits.                                 | 6.5625                |
+| GGML_TYPE_Q8_K    | "type-0" 8-bit quantization. Only used for quantizing intermediate results. Block size is 256. All 2-6 bit dot products are implemented for this quantization type. | Not specified         |
+
+#### Method Description
+
+| Model | Description                                      | Recommendation      |
+|-------|--------------------------------------------------|---------------------|
+| Q4_0  | Small, very high-quality loss                    | Legacy, prefer Q3_K_M |
+| Q4_1  | Small, substantial quality loss                  | Legacy, prefer Q3_K_L |
+| Q5_0  | Medium, balanced quality                         | Legacy, prefer Q4_K_M |
+| Q5_1  | Medium, low quality loss                         | Legacy, prefer Q5_K_M |
+| Q2_K  | Smallest, extreme quality loss                   | Not recommended     |
+| Q3_K  | Alias for Q3_K_M                                 |                     |
+| Q3_K_S| Very small, very high-quality loss               |                     |
+| Q3_K_M| Very small, very high-quality loss               |                     |
+| Q3_K_L| Small, substantial quality loss                  |                     |
+| Q4_K  | Alias for Q4_K_M                                 |                     |
+| Q4_K_S| Small, significant quality loss                  |                     |
+| Q4_K_M| Medium, balanced quality                         | Recommended        |
+| Q5_K  | Alias for Q5_K_M                                 |                     |
+| Q5_K_S| Large, low quality loss                          | Recommended        |
+| Q5_K_M| Large, very low quality loss                     | Recommended        |
+| Q6_K  | Very large, extremely low quality loss           |                     |
+| Q8_0  | Very large, extremely low quality loss           | Not recommended     |
+| F16   | Extremely large, virtually no quality loss       | Not recommended     |
+| F32   | Absolutely huge, lossless                        | Not recommended     |
+
+
+
+### Performance
+#### LLaMA 2 / 7B
+| name  | +ppl   | +ppl 13b to 7b % | size  | size 16bit % | +ppl per -1G |
+|-------|--------|------------------|-------|--------------|--------------|
+| q2_k  | 0.8698 | 133.344%         | 2.67GB | 20.54%       | 0.084201     |
+| q3_ks | 0.5505 | 84.394%          | 2.75GB | 21.15%       | 0.053707     |
+| q3_km | 0.2437 | 37.360%          | 3.06GB | 23.54%       | 0.024517     |
+| q3_kl | 0.1803 | 27.641%          | 3.35GB | 25.77%       | 0.018684     |
+| q4_0  | 0.2499 | 38.311%          | 3.50GB | 26.92%       | 0.026305     |
+| q4_1  | 0.1846 | 28.300%          | 3.90GB | 30.00%       | 0.020286     |
+| q4_ks | 0.1149 | 17.615%          | 3.56GB | 27.38%       | 0.012172     |
+| q4_km | 0.0535 | 8.202%           | 3.80GB | 29.23%       | 0.005815     |
+| q5_0  | 0.0796 | 12.203%          | 4.30GB | 33.08%       | 0.009149     |
+| q5_1  | 0.0415 | 6.362%           | 4.70GB | 36.15%       | 0.005000     |
+| q5_ks | 0.0353 | 5.412%           | 4.33GB | 33.31%       | 0.004072     |
+| q5_km | 0.0142 | 2.177%           | 4.45GB | 34.23%       | 0.001661     |
+| q6_k  | 0.0044 | 0.675%           | 5.15GB | 39.62%       | 0.000561     |
+| q8_0  | 0.0004 | 0.061%           | 6.70GB | 51.54%       | 0.000063     |
+
+#### LLaMA 2 / 13B
+| name  | +ppl   | +ppl 13b to 7b % | size  | size 16bit % | +ppl per -1G |
+|-------|--------|------------------|-------|--------------|--------------|
+| q2_k  | 0.6002 | 92.013%          | 5.13GB | 20.52%       | 0.030206     |
+| q3_ks | 0.3490 | 53.503%          | 5.27GB | 21.08%       | 0.017689     |
+| q3_km | 0.1955 | 29.971%          | 5.88GB | 23.52%       | 0.010225     |
+| q3_kl | 0.1520 | 23.302%          | 6.45GB | 25.80%       | 0.008194     |
+| q4_0  | 0.1317 | 20.190%          | 6.80GB | 27.20%       | 0.007236     |
+| q4_1  | 0.1065 | 16.327%          | 7.60GB | 30.40%       | 0.006121     |
+| q4_ks | 0.0861 | 13.199%          | 6.80GB | 27.20%       | 0.004731     |
+| q4_km | 0.0459 | 7.037%           | 7.32GB | 29.28%       | 0.002596     |
+| q5_0  | 0.0313 | 4.798%           | 8.30GB | 33.20%       | 0.001874     |
+| q5_1  | 0.0163 | 2.499%           | 9.10GB | 36.40%       | 0.001025     |
+| q5_ks | 0.0242 | 3.710%           | 8.36GB | 33.44%       | 0.001454     |
+| q5_km | 0.0095 | 1.456%           | 8.60GB | 34.40%       | 0.000579     |
+| q6_k  | 0.0025 | 0.383%           | 9.95GB | 39.80%       | 0.000166     |
+| q8_0  | 0.0005 | 0.077%           | 13.00GB| 52.00%       | 0.000042     |
+
+</details>
+
 
 
 
