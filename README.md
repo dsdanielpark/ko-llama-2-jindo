@@ -305,7 +305,7 @@ Make ggml formatted weight using Q5_K_M method
 quantize.exe jindo-7b-instruct.ggmlv3.f16.bin jindo-7b-instruct.ggmlv3.q5_k_m.bin q5_k_m
 ```
 
-## GGML Formate Quantinization
+## GGML Format Quantinization
 
 <details>
 <summary> See more... </summary>
