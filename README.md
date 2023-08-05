@@ -29,7 +29,13 @@ Delta weights over the original Llama model is released under [CC BY-NC-SA-4.0](
     - Fine-tunes up to a 65B parameter model on a 48GB GPU without performance loss compared to 16-bit models
     - Initial Release: 2023-05-23 <br>
 
+## Web Demo
 
+| model | web ui | quantinized |
+| --- | --- | --- |
+| danielpark/ko-llama-2-jindo-7b-instruct. | using [gradio](https://github.com/dsdanielpark/gradio) on [colab](https://colab.research.google.com/drive/1zwR7rz6Ym53tofCGwZZU8y5K_t1r1qqo#scrollTo=p2xw_g80xMsD) | - |
+| danielpark/ko-llama-2-jindo-7b-instruct-4bit-128g-gptq | using [text-generation-webui](https://github.com/oobabooga/text-generation-webui) on [colab](https://colab.research.google.com/drive/19ihYHsyg_5QFZ_A28uZNR_Z68E_09L4G) | gptq |
+| danielpark/ko-llama-2-jindo-7b-instruct-4bit-128g-gptq | [koboldcpp-v1.38](https://github.com/LostRuins/koboldcpp/releases/tag/v1.38) | ggml |
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
