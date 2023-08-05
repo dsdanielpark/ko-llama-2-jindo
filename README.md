@@ -202,8 +202,12 @@ Orca presents a novel approach to training large language models, combining prog
 
 ## [Long LLaMA](https://github.com/CStanKonrad/long_llama)
 LongLLaMA is built upon the foundation of OpenLLaMA and fine-tuned using the Focused Transformer (FoT) method.
-<br><br>
 
+<br><br><br>
+
+
+
+# Quantinization
 
 ## [GPTQ](https://github.com/IST-DASLab/gptq)
 GPTQ is the state-of-the-art one-shot weight quantization method. This code is built upon [GPTQ](https://github.com/IST-DASLab/gptq), [GPTQ-for-LLaMA](https://github.com/qwopqwop200/GPTQ-for-LLaMa), [GPTQ-triton](https://github.com/fpgaminer/GPTQ-triton), [Auto-GPTQ](https://github.com/PanQiWei/AutoGPTQ). 
