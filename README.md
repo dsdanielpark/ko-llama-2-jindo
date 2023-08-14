@@ -462,3 +462,4 @@ huggingface-cli delete-cache
 [4] https://huggingface.co/timdettmers/qlora-alpaca-7b <br>
 [5] https://github.com/artidoro/qlora <br>
 [6] https://arxiv.org/abs/2305.14314 <br>
+[7] https://github.com/havenhq/haven
