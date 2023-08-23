@@ -1,8 +1,5 @@
-notebook
-colab
-test.ipynb
 ko-llama-2-jindo-7b-instruct
-hf_download.ipynb
+colab
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
