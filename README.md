@@ -1,8 +1,8 @@
 Development Status :: 2 - Pre-Alpha <br>
 *Copyright (c) 2023 MinWoo Park*
 
-
-After considering various factors, refactoring and re-documentation will be done before the release.
+Status: Due to project suspension (due to resource constraints and prioritization of other projects) and the inclusion of experimental weights, we recommend not using the model weights.
+- Project is on hold (due to resource constraints and prioritization of other projects) and includes experimental weights, so we recommend not using the model weights. Once the project is officially concluded, we will release an official version with refactoring and documentation.
 
 
 ##### [Jindo](https://github.com/dsdanielpark/ko-guanaco-jindo)(sLLM) is a preprocessing LLM (Language Model) designed to refine various LLM datasets
@@ -14,6 +14,8 @@ After considering various factors, refactoring and re-documentation will be done
 [KOLANI](https://github.com/dsdanielpark/KOLANI) is a fine-tuned LLaMA2 model using the preprocessed data from [Korean LLaMA2 Jindo](https://github.com/dsdanielpark/ko-llama-2-jindo) and various architectures based on [LLaMA2](https://ai.meta.com/llama/) from [Meta AI](https://ai.meta.com/). <br>
 The `jindo` in `ko-llama2-jindo` refers to the Korean dog breed, Jindo. The term `jindo` signifies a language model specialized in preprocessing Korean language datasets, similar to `lingo`, and aims to be a lightweight and fast model tailored for processing Korean datasets for LLM(Large Language Model, "LLM") training. 
 Through this experiment, we aim to translate and fine-tune the LLM models for the purpose of generating Korean LLMs. Additionally, we will explore the possibility of fine-tuning with limited GPU resources.
+
+
 
 ## Datasets
 Data Pipeline: Please check the [data processing](https://github.com/dsdanielpark/ko-alpaca-jindo/blob/main/documents/DATA_PROCESSING.md) method and the approach for [revisions](https://github.com/dsdanielpark/ko-alpaca-jindo/blob/main/documents/DATA_REVISION.md). Please check the following repository for high-quality large-scale datasets in alpaca format for LLaMA finetuning: [Korean Open LLM Datasets(KOLD) Chain](https://github.com/dsdanielpark/korean-open-llm-datasets-chain).
