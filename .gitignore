@@ -1,7 +1,7 @@
 ko-llama-2-jindo-7b-instruct
 colab
-notebook
-notebooks
+private-notebooks
+
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
