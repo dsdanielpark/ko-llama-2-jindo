@@ -1,9 +1,7 @@
 Development Status :: 2 - Pre-Alpha <br>
 *Copyright (c) 2023 MinWoo Park*
 
-Status: Due to project suspension (due to resource constraints and prioritization of other projects) and the inclusion of experimental weights, we recommend not using the model weights.
-- Project is on hold (due to resource constraints and prioritization of other projects) and includes experimental weights, so we recommend not using the model weights. Once the project is officially concluded, we will release an official version with refactoring and documentation.
-
+Current Status: I advise against using the model weights due to the project being temporarily suspended (because of resource limitations and other project priorities) and the incorporation of experimental weights. Once the project is officially completed, I will release an official version with refactoring and documentation.
 
 ##### [Jindo](https://github.com/dsdanielpark/ko-guanaco-jindo)(sLLM) is a preprocessing LLM (Language Model) designed to refine various LLM datasets
 
