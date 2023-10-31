@@ -13,6 +13,7 @@ Current Status: I advise against using the model weights due to the project bein
 The `jindo` in `ko-llama2-jindo` refers to the Korean dog breed, Jindo. The term `jindo` signifies a language model specialized in preprocessing Korean language datasets, similar to `lingo`, and aims to be a lightweight and fast model tailored for processing Korean datasets for LLM(Large Language Model, "LLM") training. 
 Through this experiment, we aim to translate and fine-tune the LLM models for the purpose of generating Korean LLMs. Additionally, we will explore the possibility of fine-tuning with limited GPU resources.
 
+* For the Korean dataset curated in ORCA style, it has been handled as confidential due to the potential for legal disputes. I kindly request your understanding.
 
 
 ## Datasets
@@ -407,8 +408,8 @@ quantize.exe jindo-7b-instruct.ggmlv3.f16.bin jindo-7b-instruct.ggmlv3.q5_k_m.bi
 # [QnA](https://github.com/dsdanielpark/ko-alpaca-lingo/blob/main/documents/QNA.md)
 I have compiled some common and encountered errors, along with their solutions. I hope this will be helpful to many researchers. Before creating an issue, please search for it first. If you find an error along with its solution, I would appreciate it if you could provide a pull request.
 
-# [KOLANI](https://github.com/dsdanielpark/KOLANI)
-Most open-source LLM models are derived from the open-source LLM weights of Meta, called LLaMA. The Python implementation of LLaMA and fine-tuning it for the Korean language can be found in the KOLANI(Korean LLM based on LLaMA2 Natural Inference Model,고라니) project.
+# [KORANI](https://github.com/dsdanielpark/KORANI) and [GORANI](https://github.com/dsdanielpark/GORANI)
+KORANI is derived from GORANI, a project within llama2 that experiments with the distribution of appropriate datasets to transfer or distill knowledge based on English datasets. Officially, it's called Grid Of Ranvier Node In llama2 (GORANI), based on the biological term Ranvier Node, and aims to explore the optimal dataset for transferring knowledge in various languages and specific domains. Due to strict licensing issues with English datasets, gorani is primarily for research purposes. Therefore, we are refining and training a commercially usable Korean dataset on top of llama2, based on the experimental results of the GORANI project, and this project is named KORANI (Korean GORANI).
 
 # License
 I hold no legal responsibility; <br>
