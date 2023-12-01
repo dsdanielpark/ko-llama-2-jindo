@@ -216,7 +216,7 @@ LongLLaMA is built upon the foundation of OpenLLaMA and fine-tuned using the Foc
 
 
 
-# Quantinization
+# Quantization
 
 ## [GPTQ](https://github.com/IST-DASLab/gptq)
 GPTQ is the state-of-the-art one-shot weight quantization method. This code is built upon [GPTQ](https://github.com/IST-DASLab/gptq), [GPTQ-for-LLaMA](https://github.com/qwopqwop200/GPTQ-for-LLaMa), [GPTQ-triton](https://github.com/fpgaminer/GPTQ-triton), [Auto-GPTQ](https://github.com/PanQiWei/AutoGPTQ). 
@@ -293,7 +293,7 @@ https://github.com/PanQiWei/AutoGPTQ/blob/main/examples/quantization/quant_with_
 <br>
 
 
-## Quantinization using [llama.cpp](https://github.com/ggerganov/llama.cpp) to [GGML](https://github.com/ggerganov/ggml)
+## Quantization using [llama.cpp](https://github.com/ggerganov/llama.cpp) to [GGML](https://github.com/ggerganov/ggml)
 For more details, visit [here](https://huggingface.co/danielpark/ko-llama-2-jindo-7b-instruct-ggml).
 
 ```
